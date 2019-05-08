@@ -1,0 +1,33 @@
+PODS:
+  - Alamofire (5.0.0-beta.6)
+  - AviasalesSDK (3.1.3)
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
+  - Fabric (1.9.0)
+  - RxSwift (4.5.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0.0-beta.6)
+  - AviasalesSDK (~> 3.1.3)
+  - Crashlytics
+  - Fabric
+  - RxSwift (~> 4.5.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AviasalesSDK
+    - Crashlytics
+    - Fabric
+    - RxSwift
+
+SPEC CHECKSUMS:
+  Alamofire: cd08a4402bd12cacd0c66f23fb12fec8d6b965e4
+  AviasalesSDK: bb37015cbc748dad36b8d444527595cbe9970c3a
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+
+PODFILE CHECKSUM: efc4a006fc27950ab56f58ff1f65a4b654eee12c
+
+COCOAPODS: 1.5.3

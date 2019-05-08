@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AviasalesSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // MARK: Init AviasalesSDK
+        let configuration = AviasalesSDKInitialConfiguration(apiToken: "6b5d21389e4b15c33de7ab8f8a7d463b",
+                                                             apiLocale: NSLocale.current.identifier,
+                                                             partnerMarker: "156562")
+        AviasalesSDK.setup(with: configuration)
+        
+        // MARK: Init root view controller
+        let rootVC = FlightSearchViewController(nibName: "FlightSearchViewController", bundle: nil)
+        let navigationController = UINavigationController(rootViewController: rootVC)
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
         return true
     }
 

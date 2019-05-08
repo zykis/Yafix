@@ -7,13 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		170AC6F322742C920067BD77 /* FlightSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170AC6F222742C920067BD77 /* FlightSearchViewController.xib */; };
+		170AC6F522742CE80067BD77 /* FlightSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170AC6F422742CE80067BD77 /* FlightSearchPresenter.swift */; };
+		171DFA94227C6D05006DD6DA /* AirportPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171DFA93227C6D05006DD6DA /* AirportPickerCell.xib */; };
+		171DFA96227DB0BA006DD6DA /* AirportPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DFA95227DB0BA006DD6DA /* AirportPickerCell.swift */; };
+		171DFA98227DD3B4006DD6DA /* AiroirtPickerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DFA97227DD3B4006DD6DA /* AiroirtPickerCellViewModel.swift */; };
+		171DFA9B227DD6FD006DD6DA /* UITableViewCell+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DFA9A227DD6FD006DD6DA /* UITableViewCell+Identifier.swift */; };
+		171DFA9D227F7D01006DD6DA /* JRSDKAirportBuilder+Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DFA9C227F7D01006DD6DA /* JRSDKAirportBuilder+Sample.swift */; };
+		1723C44A2276248E002608DF /* FlightSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1723C4492276248E002608DF /* FlightSearchViewModel.swift */; };
+		17385FBA227FE79600D04A1A /* UIViewController+dismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17385FB9227FE79600D04A1A /* UIViewController+dismiss.swift */; };
+		17385FBE2280B13100D04A1A /* FlightSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17385FBD2280B13100D04A1A /* FlightSearchModel.swift */; };
 		1772479E2274281600888535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772479D2274281600888535 /* AppDelegate.swift */; };
-		177247A02274281600888535 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772479F2274281600888535 /* ViewController.swift */; };
-		177247A32274281600888535 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177247A12274281600888535 /* Main.storyboard */; };
+		177247A02274281600888535 /* FlightSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772479F2274281600888535 /* FlightSearchViewController.swift */; };
 		177247A62274281600888535 /* Yafix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 177247A42274281600888535 /* Yafix.xcdatamodeld */; };
 		177247A82274281700888535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177247A72274281700888535 /* Assets.xcassets */; };
 		177247AB2274281700888535 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177247A92274281700888535 /* LaunchScreen.storyboard */; };
 		177247B62274281700888535 /* YafixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177247B52274281700888535 /* YafixTests.swift */; };
+		1781052A227B42C900F510FF /* AirportPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17810529227B42C900F510FF /* AirportPickerViewController.xib */; };
+		1781052C227B451400F510FF /* AirportPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1781052B227B451400F510FF /* AirportPickerViewController.swift */; };
+		1781052E227B455300F510FF /* AirportPickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1781052D227B455300F510FF /* AirportPickerPresenter.swift */; };
+		17A0FD972282B32D0041B802 /* SearchResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A0FD942282B32D0041B802 /* SearchResultsPresenter.swift */; };
+		17A0FD982282B32D0041B802 /* SearchResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A0FD952282B32D0041B802 /* SearchResultsViewController.xib */; };
+		17A0FD992282B32D0041B802 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A0FD962282B32D0041B802 /* SearchResultsViewController.swift */; };
+		17A0FD9E2282BA260041B802 /* SearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A0FD9D2282BA260041B802 /* SearchResultsViewModel.swift */; };
+		17A0FDA12282C3D30041B802 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A0FDA02282C3D30041B802 /* SearchResultCell.swift */; };
+		17A0FDA32282C3E00041B802 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A0FDA22282C3E00041B802 /* SearchResultCell.xib */; };
+		17A9D80F2274940500E8BA3F /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A9D80E2274940500E8BA3F /* LoadingViewController.xib */; };
+		17A9D8112274944D00E8BA3F /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A9D8102274944D00E8BA3F /* LoadingViewController.swift */; };
+		17A9D8132274964200E8BA3F /* LoadingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A9D8122274964200E8BA3F /* LoadingPresenter.swift */; };
+		CB2C8A37E853FED15C249CF0 /* Pods_Yafix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D7BA4F8C1C61A327DEFD40 /* Pods_Yafix.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,10 +49,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		170AC6F222742C920067BD77 /* FlightSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightSearchViewController.xib; sourceTree = "<group>"; };
+		170AC6F422742CE80067BD77 /* FlightSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchPresenter.swift; sourceTree = "<group>"; };
+		171DFA93227C6D05006DD6DA /* AirportPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AirportPickerCell.xib; sourceTree = "<group>"; };
+		171DFA95227DB0BA006DD6DA /* AirportPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportPickerCell.swift; sourceTree = "<group>"; };
+		171DFA97227DD3B4006DD6DA /* AiroirtPickerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiroirtPickerCellViewModel.swift; sourceTree = "<group>"; };
+		171DFA9A227DD6FD006DD6DA /* UITableViewCell+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Identifier.swift"; sourceTree = "<group>"; };
+		171DFA9C227F7D01006DD6DA /* JRSDKAirportBuilder+Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JRSDKAirportBuilder+Sample.swift"; sourceTree = "<group>"; };
+		1723C4492276248E002608DF /* FlightSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchViewModel.swift; sourceTree = "<group>"; };
+		17385FB9227FE79600D04A1A /* UIViewController+dismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+dismiss.swift"; sourceTree = "<group>"; };
+		17385FBD2280B13100D04A1A /* FlightSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchModel.swift; sourceTree = "<group>"; };
 		1772479A2274281600888535 /* Yafix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yafix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1772479D2274281600888535 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1772479F2274281600888535 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		177247A22274281600888535 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1772479F2274281600888535 /* FlightSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchViewController.swift; sourceTree = "<group>"; };
 		177247A52274281600888535 /* Yafix.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Yafix.xcdatamodel; sourceTree = "<group>"; };
 		177247A72274281700888535 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		177247AA2274281700888535 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +69,21 @@
 		177247B12274281700888535 /* YafixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YafixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		177247B52274281700888535 /* YafixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YafixTests.swift; sourceTree = "<group>"; };
 		177247B72274281700888535 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17810529227B42C900F510FF /* AirportPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AirportPickerViewController.xib; sourceTree = "<group>"; };
+		1781052B227B451400F510FF /* AirportPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportPickerViewController.swift; sourceTree = "<group>"; };
+		1781052D227B455300F510FF /* AirportPickerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportPickerPresenter.swift; sourceTree = "<group>"; };
+		17A0FD942282B32D0041B802 /* SearchResultsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsPresenter.swift; sourceTree = "<group>"; };
+		17A0FD952282B32D0041B802 /* SearchResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultsViewController.xib; sourceTree = "<group>"; };
+		17A0FD962282B32D0041B802 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		17A0FD9D2282BA260041B802 /* SearchResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModel.swift; sourceTree = "<group>"; };
+		17A0FDA02282C3D30041B802 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		17A0FDA22282C3E00041B802 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		17A9D80E2274940500E8BA3F /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
+		17A9D8102274944D00E8BA3F /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		17A9D8122274964200E8BA3F /* LoadingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPresenter.swift; sourceTree = "<group>"; };
+		70D7BA4F8C1C61A327DEFD40 /* Pods_Yafix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yafix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98054FBE8DE2B7A282A75403 /* Pods-Yafix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yafix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yafix/Pods-Yafix.debug.xcconfig"; sourceTree = "<group>"; };
+		9ABD66D94092005587212C4A /* Pods-Yafix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yafix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yafix/Pods-Yafix.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB2C8A37E853FED15C249CF0 /* Pods_Yafix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +105,113 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		170AC6F022742A690067BD77 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				177247A92274281700888535 /* LaunchScreen.storyboard */,
+				177247A42274281600888535 /* Yafix.xcdatamodeld */,
+				177247AC2274281700888535 /* Info.plist */,
+				177247A72274281700888535 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		170AC6F122742C5A0067BD77 /* FlightSearch */ = {
+			isa = PBXGroup;
+			children = (
+				1723C4482276245E002608DF /* ViewModel */,
+				1723C4462276244A002608DF /* View */,
+				1723C44722762457002608DF /* Presenter */,
+			);
+			path = FlightSearch;
+			sourceTree = "<group>";
+		};
+		171DFA92227C6CE9006DD6DA /* AirportPickerCell */ = {
+			isa = PBXGroup;
+			children = (
+				17385FBF2281C12D00D04A1A /* IATALabel */,
+				171DFA95227DB0BA006DD6DA /* AirportPickerCell.swift */,
+				171DFA93227C6D05006DD6DA /* AirportPickerCell.xib */,
+				171DFA97227DD3B4006DD6DA /* AiroirtPickerCellViewModel.swift */,
+			);
+			path = AirportPickerCell;
+			sourceTree = "<group>";
+		};
+		171DFA99227DD6D3006DD6DA /* Extenstions */ = {
+			isa = PBXGroup;
+			children = (
+				171DFA9A227DD6FD006DD6DA /* UITableViewCell+Identifier.swift */,
+				171DFA9C227F7D01006DD6DA /* JRSDKAirportBuilder+Sample.swift */,
+				17385FB9227FE79600D04A1A /* UIViewController+dismiss.swift */,
+			);
+			path = Extenstions;
+			sourceTree = "<group>";
+		};
+		1723C4462276244A002608DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1772479F2274281600888535 /* FlightSearchViewController.swift */,
+				170AC6F222742C920067BD77 /* FlightSearchViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1723C44722762457002608DF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				170AC6F422742CE80067BD77 /* FlightSearchPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1723C4482276245E002608DF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1723C4492276248E002608DF /* FlightSearchViewModel.swift */,
+				17385FBD2280B13100D04A1A /* FlightSearchModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1723C44B22762B34002608DF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1723C44C22762B3B002608DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				17A9D8102274944D00E8BA3F /* LoadingViewController.swift */,
+				17A9D80E2274940500E8BA3F /* LoadingViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1723C44D22762B41002608DF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				17A9D8122274964200E8BA3F /* LoadingPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		17385FBF2281C12D00D04A1A /* IATALabel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IATALabel;
+			sourceTree = "<group>";
+		};
 		177247912274281600888535 = {
 			isa = PBXGroup;
 			children = (
 				1772479C2274281600888535 /* Yafix */,
 				177247B42274281700888535 /* YafixTests */,
 				1772479B2274281600888535 /* Products */,
+				4F93B880E311F46613E0AF76 /* Pods */,
+				6947329AA0F8426454D5A9C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +227,13 @@
 		1772479C2274281600888535 /* Yafix */ = {
 			isa = PBXGroup;
 			children = (
+				17A0FD8B2282B2790041B802 /* SearchResults */,
+				17810525227B428900F510FF /* AirportPicker */,
+				17A9D80D227493C800E8BA3F /* Loading */,
+				170AC6F122742C5A0067BD77 /* FlightSearch */,
 				1772479D2274281600888535 /* AppDelegate.swift */,
-				1772479F2274281600888535 /* ViewController.swift */,
-				177247A12274281600888535 /* Main.storyboard */,
-				177247A72274281700888535 /* Assets.xcassets */,
-				177247A92274281700888535 /* LaunchScreen.storyboard */,
-				177247AC2274281700888535 /* Info.plist */,
-				177247A42274281600888535 /* Yafix.xcdatamodeld */,
+				171DFA99227DD6D3006DD6DA /* Extenstions */,
+				170AC6F022742A690067BD77 /* Resources */,
 			);
 			path = Yafix;
 			sourceTree = "<group>";
@@ -99,6 +247,113 @@
 			path = YafixTests;
 			sourceTree = "<group>";
 		};
+		17810525227B428900F510FF /* AirportPicker */ = {
+			isa = PBXGroup;
+			children = (
+				171DFA92227C6CE9006DD6DA /* AirportPickerCell */,
+				17810528227B42B300F510FF /* ViewModel */,
+				17810527227B42A300F510FF /* View */,
+				17810526227B429800F510FF /* Presenter */,
+			);
+			path = AirportPicker;
+			sourceTree = "<group>";
+		};
+		17810526227B429800F510FF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1781052D227B455300F510FF /* AirportPickerPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		17810527227B42A300F510FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1781052B227B451400F510FF /* AirportPickerViewController.swift */,
+				17810529227B42C900F510FF /* AirportPickerViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		17810528227B42B300F510FF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		17A0FD8B2282B2790041B802 /* SearchResults */ = {
+			isa = PBXGroup;
+			children = (
+				17A0FD9F2282C3BD0041B802 /* SearchResultCell */,
+				17A0FD9B2282B4A50041B802 /* ViewModel */,
+				17A0FD9C2282B4AA0041B802 /* View */,
+				17A0FD9A2282B3F50041B802 /* Presenter */,
+			);
+			path = SearchResults;
+			sourceTree = "<group>";
+		};
+		17A0FD9A2282B3F50041B802 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				17A0FD942282B32D0041B802 /* SearchResultsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		17A0FD9B2282B4A50041B802 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				17A0FD9D2282BA260041B802 /* SearchResultsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		17A0FD9C2282B4AA0041B802 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				17A0FD962282B32D0041B802 /* SearchResultsViewController.swift */,
+				17A0FD952282B32D0041B802 /* SearchResultsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		17A0FD9F2282C3BD0041B802 /* SearchResultCell */ = {
+			isa = PBXGroup;
+			children = (
+				17A0FDA02282C3D30041B802 /* SearchResultCell.swift */,
+				17A0FDA22282C3E00041B802 /* SearchResultCell.xib */,
+			);
+			path = SearchResultCell;
+			sourceTree = "<group>";
+		};
+		17A9D80D227493C800E8BA3F /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				1723C44B22762B34002608DF /* ViewModel */,
+				1723C44C22762B3B002608DF /* View */,
+				1723C44D22762B41002608DF /* Presenter */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		4F93B880E311F46613E0AF76 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				98054FBE8DE2B7A282A75403 /* Pods-Yafix.debug.xcconfig */,
+				9ABD66D94092005587212C4A /* Pods-Yafix.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6947329AA0F8426454D5A9C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70D7BA4F8C1C61A327DEFD40 /* Pods_Yafix.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +361,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 177247BA2274281700888535 /* Build configuration list for PBXNativeTarget "Yafix" */;
 			buildPhases = (
+				1D6EA6C02B40BAD3DF85FECC /* [CP] Check Pods Manifest.lock */,
 				177247962274281600888535 /* Sources */,
 				177247972274281600888535 /* Frameworks */,
 				177247982274281600888535 /* Resources */,
+				A1B97ACDA8F18B5274F3D8B7 /* [CP] Embed Pods Frameworks */,
+				505EB1E041A2B1FD2D7160E1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,8 +439,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				177247AB2274281700888535 /* LaunchScreen.storyboard in Resources */,
+				171DFA94227C6D05006DD6DA /* AirportPickerCell.xib in Resources */,
+				17A0FDA32282C3E00041B802 /* SearchResultCell.xib in Resources */,
+				17A0FD982282B32D0041B802 /* SearchResultsViewController.xib in Resources */,
+				17A9D80F2274940500E8BA3F /* LoadingViewController.xib in Resources */,
+				1781052A227B42C900F510FF /* AirportPickerViewController.xib in Resources */,
+				170AC6F322742C920067BD77 /* FlightSearchViewController.xib in Resources */,
 				177247A82274281700888535 /* Assets.xcassets in Resources */,
-				177247A32274281600888535 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,14 +458,101 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1D6EA6C02B40BAD3DF85FECC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Yafix-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		505EB1E041A2B1FD2D7160E1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Yafix/Pods-Yafix-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/AviasalesSDK/AviasalesSDKResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AviasalesSDKResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yafix/Pods-Yafix-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1B97ACDA8F18B5274F3D8B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Yafix/Pods-Yafix-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yafix/Pods-Yafix-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		177247962274281600888535 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				177247A02274281600888535 /* ViewController.swift in Sources */,
+				177247A02274281600888535 /* FlightSearchViewController.swift in Sources */,
+				1723C44A2276248E002608DF /* FlightSearchViewModel.swift in Sources */,
+				1781052C227B451400F510FF /* AirportPickerViewController.swift in Sources */,
 				177247A62274281600888535 /* Yafix.xcdatamodeld in Sources */,
+				171DFA9D227F7D01006DD6DA /* JRSDKAirportBuilder+Sample.swift in Sources */,
+				171DFA98227DD3B4006DD6DA /* AiroirtPickerCellViewModel.swift in Sources */,
+				17A9D8112274944D00E8BA3F /* LoadingViewController.swift in Sources */,
+				170AC6F522742CE80067BD77 /* FlightSearchPresenter.swift in Sources */,
+				17A9D8132274964200E8BA3F /* LoadingPresenter.swift in Sources */,
+				1781052E227B455300F510FF /* AirportPickerPresenter.swift in Sources */,
+				17A0FDA12282C3D30041B802 /* SearchResultCell.swift in Sources */,
+				17A0FD972282B32D0041B802 /* SearchResultsPresenter.swift in Sources */,
+				17A0FD9E2282BA260041B802 /* SearchResultsViewModel.swift in Sources */,
+				17A0FD992282B32D0041B802 /* SearchResultsViewController.swift in Sources */,
+				17385FBE2280B13100D04A1A /* FlightSearchModel.swift in Sources */,
+				171DFA96227DB0BA006DD6DA /* AirportPickerCell.swift in Sources */,
 				1772479E2274281600888535 /* AppDelegate.swift in Sources */,
+				17385FBA227FE79600D04A1A /* UIViewController+dismiss.swift in Sources */,
+				171DFA9B227DD6FD006DD6DA /* UITableViewCell+Identifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,14 +575,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		177247A12274281600888535 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				177247A22274281600888535 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		177247A92274281700888535 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -362,11 +704,12 @@
 		};
 		177247BB2274281700888535 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98054FBE8DE2B7A282A75403 /* Pods-Yafix.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67U7CVYQJQ;
-				INFOPLIST_FILE = Yafix/Info.plist;
+				INFOPLIST_FILE = Yafix/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,17 +717,18 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zykis.Yafix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		177247BC2274281700888535 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9ABD66D94092005587212C4A /* Pods-Yafix.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67U7CVYQJQ;
-				INFOPLIST_FILE = Yafix/Info.plist;
+				INFOPLIST_FILE = Yafix/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,7 +736,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zykis.Yafix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
