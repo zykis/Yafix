@@ -21,6 +21,10 @@ class SearchResultsViewController: UIViewController, SearchResultsViewProtocol {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) not implemented")
     }
+    
+    func ticketTapped(at index: Int) {
+        self.presenter.handleTicketTapped(at: index)
+    }
 }
 
 // MARK: Lifecycle
@@ -65,5 +69,9 @@ extension SearchResultsViewController: UITableViewDataSource {
 extension SearchResultsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 112.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.ticketTapped(at: indexPath.row)
     }
 }

@@ -10,6 +10,8 @@ import Foundation
 import AviasalesSDK
 
 struct TicketViewModel {
+    let model: JRSDKTicket
+    
     let airline: String
     let airlineIcon: String
     let price: String
@@ -20,6 +22,8 @@ struct TicketViewModel {
     let destinationIATA: String
     
     init(model: JRSDKTicket) {
+        self.model = model
+        
         let proposal = model.proposals.firstObject as! JRSDKProposal
         let directFlightSegment = model.flightSegments.firstObject as! JRSDKFlightSegment
         let flight = directFlightSegment.flights.firstObject as! JRSDKFlight
@@ -43,6 +47,14 @@ struct TicketViewModel {
         let hours = Int(directFlightSegment.totalDurationInMinutes / 60)
         let minutes = directFlightSegment.totalDurationInMinutes % 60
         self.flightDuration = "\(hours)h \(minutes)m"
+    }
+    
+    var modelProposal: JRSDKProposal {
+        return self.model.proposals.firstObject as! JRSDKProposal
+    }
+    
+    var modelSearchID: String? {
+        return model.searchResultInfo.searchID
     }
 }
 

@@ -11,6 +11,7 @@ import AviasalesSDK
 
 protocol SearchResultsViewProtocol: class {
     init(searchResult: JRSDKSearchResult)
+    func ticketTapped(at index: Int)
 }
 
 
@@ -19,12 +20,14 @@ protocol SearchResultsPresenterProtocol {
     func numberOfSections() -> Int
     func numberOfRowsInSection(section: Int) -> Int
     func ticketViewModel(at index: Int) -> TicketViewModel
+    func handleTicketTapped(at index: Int)
 }
 
 
-class SearchResultsPresenter: SearchResultsPresenterProtocol {
+class SearchResultsPresenter: NSObject, SearchResultsPresenterProtocol {
     unowned let view: SearchResultsViewProtocol
     var viewModel: SearchResultsViewModel
+    var purchasePerformer: AviasalesSDKPurchasePerformer?
     
     required init(view: SearchResultsViewProtocol, searchResult: JRSDKSearchResult) {
         self.view = view
@@ -45,5 +48,27 @@ class SearchResultsPresenter: SearchResultsPresenterProtocol {
     
     func ticketViewModel(at index: Int) -> TicketViewModel {
         return viewModel.tickets[index]
+    }
+    
+    func handleTicketTapped(at index: Int) {
+        let ticketViewModel = viewModel.tickets[index]
+        let proposal = ticketViewModel.modelProposal
+        let searchID = ticketViewModel.modelSearchID
+        self.purchasePerformer = AviasalesSDKPurchasePerformer(proposal: proposal, searchId: searchID)
+        self.purchasePerformer?.perform(with: self)
+    }
+}
+
+
+// MARK: AviasalesSDKPurchasePerformerDelegate
+extension SearchResultsPresenter: AviasalesSDKPurchasePerformerDelegate {
+    func purchasePerformer(_ performer: AviasalesSDKPurchasePerformer!, didFinishWith URLRequest: URLRequest!, clickID: String!) {
+        if let url = URLRequest.url {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    func purchasePerformer(_ performer: AviasalesSDKPurchasePerformer!, didFailWithError error: Error!) {
+        print(error.localizedDescription)
     }
 }
