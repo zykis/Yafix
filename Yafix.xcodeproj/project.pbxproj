@@ -10,6 +10,8 @@
 		170AC6F322742C920067BD77 /* FlightSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170AC6F222742C920067BD77 /* FlightSearchViewController.xib */; };
 		170AC6F522742CE80067BD77 /* FlightSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170AC6F422742CE80067BD77 /* FlightSearchPresenter.swift */; };
 		170FC4292295395200C3A751 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170FC4282295395200C3A751 /* DatePicker.swift */; };
+		170FC42F2295F07500C3A751 /* back-button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 170FC42D2295F07500C3A751 /* back-button@3x.png */; };
+		170FC4302295F07500C3A751 /* back-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 170FC42E2295F07500C3A751 /* back-button@2x.png */; };
 		171DFA94227C6D05006DD6DA /* AirportPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171DFA93227C6D05006DD6DA /* AirportPickerCell.xib */; };
 		171DFA96227DB0BA006DD6DA /* AirportPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DFA95227DB0BA006DD6DA /* AirportPickerCell.swift */; };
 		171DFA98227DD3B4006DD6DA /* AiroirtPickerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DFA97227DD3B4006DD6DA /* AiroirtPickerCellViewModel.swift */; };
@@ -59,6 +61,8 @@
 		170AC6F222742C920067BD77 /* FlightSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightSearchViewController.xib; sourceTree = "<group>"; };
 		170AC6F422742CE80067BD77 /* FlightSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchPresenter.swift; sourceTree = "<group>"; };
 		170FC4282295395200C3A751 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
+		170FC42D2295F07500C3A751 /* back-button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button@3x.png"; sourceTree = "<group>"; };
+		170FC42E2295F07500C3A751 /* back-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button@2x.png"; sourceTree = "<group>"; };
 		171DFA93227C6D05006DD6DA /* AirportPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AirportPickerCell.xib; sourceTree = "<group>"; };
 		171DFA95227DB0BA006DD6DA /* AirportPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportPickerCell.swift; sourceTree = "<group>"; };
 		171DFA97227DD3B4006DD6DA /* AiroirtPickerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiroirtPickerCellViewModel.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 		170AC6F022742A690067BD77 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				170FC42A2295EF3800C3A751 /* Icons */,
 				1796441E2292948F00A41091 /* Sketches */,
 			);
 			path = Resources;
@@ -143,6 +148,15 @@
 				170FC4282295395200C3A751 /* DatePicker.swift */,
 			);
 			path = DatePicker;
+			sourceTree = "<group>";
+		};
+		170FC42A2295EF3800C3A751 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				170FC42E2295F07500C3A751 /* back-button@2x.png */,
+				170FC42D2295F07500C3A751 /* back-button@3x.png */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 		171DFA92227C6CE9006DD6DA /* AirportPickerCell */ = {
@@ -493,12 +507,14 @@
 			files = (
 				179644282292948F00A41091 /* AirportPicker.png in Resources */,
 				179644292292948F00A41091 /* DatePicker.png in Resources */,
+				170FC42F2295F07500C3A751 /* back-button@3x.png in Resources */,
 				179644262292948F00A41091 /* PassengerPicker.png in Resources */,
 				179644252292948F00A41091 /* SearchResult.png in Resources */,
 				179644272292948F00A41091 /* Overall.gif in Resources */,
 				177247AB2274281700888535 /* LaunchScreen.storyboard in Resources */,
 				171DFA94227C6D05006DD6DA /* AirportPickerCell.xib in Resources */,
 				17A0FDA32282C3E00041B802 /* SearchResultCell.xib in Resources */,
+				170FC4302295F07500C3A751 /* back-button@2x.png in Resources */,
 				17A0FD982282B32D0041B802 /* SearchResultsViewController.xib in Resources */,
 				17A9D80F2274940500E8BA3F /* LoadingViewController.xib in Resources */,
 				1781052A227B42C900F510FF /* AirportPickerViewController.xib in Resources */,

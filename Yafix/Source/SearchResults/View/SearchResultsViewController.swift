@@ -25,6 +25,11 @@ class SearchResultsViewController: UIViewController, SearchResultsViewProtocol {
     func ticketTapped(at index: Int) {
         self.presenter.handleTicketTapped(at: index)
     }
+    
+    @objc func jumpToRoot() {
+        print("GROOOOT")
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 }
 
 // MARK: Lifecycle
@@ -32,6 +37,15 @@ extension SearchResultsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTableView()
+        
+        self.navigationItem.hidesBackButton = true
+        let backButton = UIBarButtonItem(image: UIImage(named: "back-button.png"), style: .plain, target: self, action: #selector(jumpToRoot))
+//        backButton.setBackgroundImage(UIImage(named: "back-button.png"), for: .normal, barMetrics: .default)
+        self.navigationItem.leftBarButtonItem = backButton
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }
 

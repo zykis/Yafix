@@ -32,7 +32,11 @@ class FlightSearchViewController: UIViewController, FlightSeachView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) not implemented")
     }
-    
+}
+
+
+// MARK: Lifecycle
+extension FlightSearchViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.searchButton.addTarget(self, action: #selector(FlightSearchViewController.searchButtonTapped), for: .touchUpInside)
@@ -44,10 +48,18 @@ class FlightSearchViewController: UIViewController, FlightSeachView {
         self.departureDateLabel.isUserInteractionEnabled = true
         self.returnLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(presentReturnDatePicker)))
         self.returnLabel.isUserInteractionEnabled = true
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.presenter.handleLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+}
+
+
+// MARK: FlightSearchViewProtocol
+extension FlightSearchViewController {
     @objc func searchButtonTapped() {
         self.presenter.handleSearch()
     }

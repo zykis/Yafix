@@ -40,6 +40,6 @@ class LoadingViewController: UIViewController, LoadingView {
     
     func presentSearchResult(searchResult: JRSDKSearchResult) {
         let destVC = SearchResultsViewController(searchResult: searchResult)
-        self.navigationController?.present(destVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(destVC, animated: true)
     }
 }
