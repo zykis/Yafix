@@ -8,27 +8,30 @@
 
 import XCTest
 @testable import Yafix
+@testable import AviasalesSDK
 
-class YafixTests: XCTestCase {
+class FlightSearchPresenterTests: XCTestCase {
+    var view: FlightSearchViewController!
 
     override func setUp() {
+        super.setUp()
+        view = FlightSearchViewController(nibName: nil, bundle: nil)
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        view = nil
+        super.tearDown()
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testBuildSearchInfo() {
+        // 1. given
+        let sib = JRSDKSearchInfoBuilder()
+        let tsb = JRSDKTravelSegmentBuilder()
+        tsb.originAirport = AviasalesSDK.sharedInstance().airportsStorage.findAnything(byIATA: "MOW")
+        tsb.destinationAirport = AviasalesSDK.sharedInstance().airportsStorage.findAnything(byIATA: "LED")
+        tsb.departureDate = Date()
+        sib.travelSegments = NSOrderedSet(object: tsb.build())
+        sib.adults = 
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

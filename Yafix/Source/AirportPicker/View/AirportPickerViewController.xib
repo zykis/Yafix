@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AirportPickerViewController" customModule="Yafix" customModuleProvider="target">
+            <connections>
+                <outlet property="closeButon" destination="0ms-AI-mW6" id="djT-cc-AgH"/>
+                <outlet property="searchTextField" destination="Ys9-yn-lgw" id="cAj-qk-lqn"/>
+                <outlet property="tableView" destination="qEN-0e-yCo" id="CSZ-86-5Wh"/>
+                <outlet property="view" destination="7Ub-z7-Vqp" id="L8I-Hb-4Kb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="7Ub-z7-Vqp">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ms-AI-mW6">
+                    <rect key="frame" x="20" y="46" width="30" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="X"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9d8-3p-aWH">
+                    <rect key="frame" x="353" y="46" width="36" height="30"/>
+                    <state key="normal" title="Clear"/>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ys9-yn-lgw">
+                    <rect key="frame" x="20" y="88" width="374" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTN-4n-Cl5">
+                    <rect key="frame" x="20" y="126" width="111" height="30"/>
+                    <state key="normal" title="Current location"/>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qEN-0e-yCo">
+                    <rect key="frame" x="20" y="164" width="374" height="698"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="PDH-Zr-q5q"/>
+                        <outlet property="delegate" destination="-1" id="EdA-O3-DTn"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="qEN-0e-yCo" firstAttribute="top" secondItem="mTN-4n-Cl5" secondAttribute="bottom" constant="8" id="6uo-Y0-I9w"/>
+                <constraint firstItem="fci-gc-LTF" firstAttribute="trailing" secondItem="qEN-0e-yCo" secondAttribute="trailing" constant="20" id="7pX-xF-W6k"/>
+                <constraint firstItem="Ys9-yn-lgw" firstAttribute="leading" secondItem="fci-gc-LTF" secondAttribute="leading" constant="20" id="8q8-VE-a1h"/>
+                <constraint firstItem="fci-gc-LTF" firstAttribute="trailing" secondItem="Ys9-yn-lgw" secondAttribute="trailing" constant="20" id="B6x-4r-1FZ"/>
+                <constraint firstItem="mTN-4n-Cl5" firstAttribute="top" secondItem="Ys9-yn-lgw" secondAttribute="bottom" constant="8" id="EVc-Nv-jYS"/>
+                <constraint firstItem="0ms-AI-mW6" firstAttribute="leading" secondItem="fci-gc-LTF" secondAttribute="leading" constant="20" id="HTH-MU-DDd"/>
+                <constraint firstItem="0ms-AI-mW6" firstAttribute="top" secondItem="fci-gc-LTF" secondAttribute="top" constant="2" id="PVK-fI-iOt"/>
+                <constraint firstItem="qEN-0e-yCo" firstAttribute="leading" secondItem="fci-gc-LTF" secondAttribute="leading" constant="20" id="SUD-7P-jnC"/>
+                <constraint firstItem="9d8-3p-aWH" firstAttribute="top" secondItem="fci-gc-LTF" secondAttribute="top" constant="2" id="YOq-NV-nrM"/>
+                <constraint firstItem="Ys9-yn-lgw" firstAttribute="top" secondItem="0ms-AI-mW6" secondAttribute="bottom" constant="8" id="ZzG-ph-gXf"/>
+                <constraint firstItem="mTN-4n-Cl5" firstAttribute="leading" secondItem="fci-gc-LTF" secondAttribute="leading" constant="20" id="feG-5C-23v"/>
+                <constraint firstItem="fci-gc-LTF" firstAttribute="trailing" secondItem="9d8-3p-aWH" secondAttribute="trailing" constant="25" id="jJk-zo-vL9"/>
+                <constraint firstItem="fci-gc-LTF" firstAttribute="bottom" secondItem="qEN-0e-yCo" secondAttribute="bottom" id="mef-5m-YDK"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fci-gc-LTF"/>
+            <point key="canvasLocation" x="52.173913043478265" y="164.73214285714286"/>
+        </view>
+    </objects>
+</document>
