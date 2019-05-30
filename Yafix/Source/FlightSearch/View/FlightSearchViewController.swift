@@ -44,9 +44,9 @@ extension FlightSearchViewController {
         self.originIATALabel.isUserInteractionEnabled = true
         self.destinationIATALabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(destinationAirportTapped)))
         self.destinationIATALabel.isUserInteractionEnabled = true
-        self.departureDateLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(presentDepartureDatePicker)))
+        self.departureDateLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dateTapped)))
         self.departureDateLabel.isUserInteractionEnabled = true
-        self.returnLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(presentReturnDatePicker)))
+        self.returnLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dateTapped)))
         self.returnLabel.isUserInteractionEnabled = true
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.presenter.handleLoad()
@@ -94,17 +94,14 @@ extension FlightSearchViewController {
         self.navigationController?.pushViewController(loadingView, animated: true)
     }
     
-    @objc func presentDepartureDatePicker() {
-        let datePickerView = DatePicker(frame: self.view.bounds, selection: { (date: Date) -> Void in
-            self.presenter.handleDepartureDateSelected(departureDate: date)
-        })
-        self.view.addSubview(datePickerView)
+    @objc func dateTapped() {
+        self.presenter.handleDateTapped()
     }
     
-    @objc func presentReturnDatePicker() {
-        let datePickerView = DatePicker(frame: self.view.bounds, selection: { (date: Date) -> Void in
-            self.presenter.handleReturnDateSelected(returnDate: date)
-        })
-        self.view.addSubview(datePickerView)
+    func presentDatePicker(departureDate: Date?, returnDate: Date?) {
+        let dp = DatePickerViewController(departureDate: departureDate, returnDate: returnDate) { (date, type) in
+            self.presenter.handleDateSelected(date: date, type: type)
+        }
+        self.present(dp, animated: true, completion: nil)
     }
 }

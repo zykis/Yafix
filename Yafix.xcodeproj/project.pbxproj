@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		170AC6F322742C920067BD77 /* FlightSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170AC6F222742C920067BD77 /* FlightSearchViewController.xib */; };
 		170AC6F522742CE80067BD77 /* FlightSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170AC6F422742CE80067BD77 /* FlightSearchPresenter.swift */; };
-		170FC4292295395200C3A751 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170FC4282295395200C3A751 /* DatePicker.swift */; };
+		170FC4292295395200C3A751 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170FC4282295395200C3A751 /* DatePickerViewController.swift */; };
 		170FC42F2295F07500C3A751 /* back-button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 170FC42D2295F07500C3A751 /* back-button@3x.png */; };
 		170FC4302295F07500C3A751 /* back-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 170FC42E2295F07500C3A751 /* back-button@2x.png */; };
 		171DFA94227C6D05006DD6DA /* AirportPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171DFA93227C6D05006DD6DA /* AirportPickerCell.xib */; };
@@ -17,6 +17,8 @@
 		171DFA98227DD3B4006DD6DA /* AiroirtPickerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DFA97227DD3B4006DD6DA /* AiroirtPickerCellViewModel.swift */; };
 		171DFA9B227DD6FD006DD6DA /* UITableViewCell+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DFA9A227DD6FD006DD6DA /* UITableViewCell+Identifier.swift */; };
 		171DFA9D227F7D01006DD6DA /* JRSDKAirportBuilder+Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DFA9C227F7D01006DD6DA /* JRSDKAirportBuilder+Sample.swift */; };
+		172012EC229E720B00FA40A7 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 172012EB229E720B00FA40A7 /* DatePickerViewController.xib */; };
+		172012F1229E78DB00FA40A7 /* DatePickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172012F0229E78DB00FA40A7 /* DatePickerPresenter.swift */; };
 		1723C44A2276248E002608DF /* FlightSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1723C4492276248E002608DF /* FlightSearchViewModel.swift */; };
 		17385FBA227FE79600D04A1A /* UIViewController+dismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17385FB9227FE79600D04A1A /* UIViewController+dismiss.swift */; };
 		17385FBE2280B13100D04A1A /* FlightSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17385FBD2280B13100D04A1A /* FlightSearchModel.swift */; };
@@ -60,7 +62,7 @@
 /* Begin PBXFileReference section */
 		170AC6F222742C920067BD77 /* FlightSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightSearchViewController.xib; sourceTree = "<group>"; };
 		170AC6F422742CE80067BD77 /* FlightSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchPresenter.swift; sourceTree = "<group>"; };
-		170FC4282295395200C3A751 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
+		170FC4282295395200C3A751 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		170FC42D2295F07500C3A751 /* back-button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button@3x.png"; sourceTree = "<group>"; };
 		170FC42E2295F07500C3A751 /* back-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button@2x.png"; sourceTree = "<group>"; };
 		171DFA93227C6D05006DD6DA /* AirportPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AirportPickerCell.xib; sourceTree = "<group>"; };
@@ -68,6 +70,8 @@
 		171DFA97227DD3B4006DD6DA /* AiroirtPickerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiroirtPickerCellViewModel.swift; sourceTree = "<group>"; };
 		171DFA9A227DD6FD006DD6DA /* UITableViewCell+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Identifier.swift"; sourceTree = "<group>"; };
 		171DFA9C227F7D01006DD6DA /* JRSDKAirportBuilder+Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JRSDKAirportBuilder+Sample.swift"; sourceTree = "<group>"; };
+		172012EB229E720B00FA40A7 /* DatePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
+		172012F0229E78DB00FA40A7 /* DatePickerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerPresenter.swift; sourceTree = "<group>"; };
 		1723C4492276248E002608DF /* FlightSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchViewModel.swift; sourceTree = "<group>"; };
 		17385FB9227FE79600D04A1A /* UIViewController+dismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+dismiss.swift"; sourceTree = "<group>"; };
 		17385FBD2280B13100D04A1A /* FlightSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchModel.swift; sourceTree = "<group>"; };
@@ -145,7 +149,9 @@
 		170FC4272295394500C3A751 /* DatePicker */ = {
 			isa = PBXGroup;
 			children = (
-				170FC4282295395200C3A751 /* DatePicker.swift */,
+				172012EF229E78C000FA40A7 /* ViewModel */,
+				172012EE229E78B300FA40A7 /* Presenter */,
+				172012ED229E78AF00FA40A7 /* View */,
 			);
 			path = DatePicker;
 			sourceTree = "<group>";
@@ -178,6 +184,30 @@
 				17385FB9227FE79600D04A1A /* UIViewController+dismiss.swift */,
 			);
 			path = Extenstions;
+			sourceTree = "<group>";
+		};
+		172012ED229E78AF00FA40A7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				170FC4282295395200C3A751 /* DatePickerViewController.swift */,
+				172012EB229E720B00FA40A7 /* DatePickerViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		172012EE229E78B300FA40A7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				172012F0229E78DB00FA40A7 /* DatePickerPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		172012EF229E78C000FA40A7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		1723C4462276244A002608DF /* View */ = {
@@ -508,6 +538,7 @@
 				179644282292948F00A41091 /* AirportPicker.png in Resources */,
 				179644292292948F00A41091 /* DatePicker.png in Resources */,
 				170FC42F2295F07500C3A751 /* back-button@3x.png in Resources */,
+				172012EC229E720B00FA40A7 /* DatePickerViewController.xib in Resources */,
 				179644262292948F00A41091 /* PassengerPicker.png in Resources */,
 				179644252292948F00A41091 /* SearchResult.png in Resources */,
 				179644272292948F00A41091 /* Overall.gif in Resources */,
@@ -628,9 +659,10 @@
 				17385FBE2280B13100D04A1A /* FlightSearchModel.swift in Sources */,
 				171DFA96227DB0BA006DD6DA /* AirportPickerCell.swift in Sources */,
 				1772479E2274281600888535 /* AppDelegate.swift in Sources */,
+				172012F1229E78DB00FA40A7 /* DatePickerPresenter.swift in Sources */,
 				17385FBA227FE79600D04A1A /* UIViewController+dismiss.swift in Sources */,
 				171DFA9B227DD6FD006DD6DA /* UITableViewCell+Identifier.swift in Sources */,
-				170FC4292295395200C3A751 /* DatePicker.swift in Sources */,
+				170FC4292295395200C3A751 /* DatePickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
