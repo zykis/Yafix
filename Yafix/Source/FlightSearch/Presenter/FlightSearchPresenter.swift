@@ -29,6 +29,7 @@ protocol FlightSearchViewPresenter {
     func buildSearchInfo() -> JRSDKSearchInfo?
     func handleSearch()
     func handleAirportSelected(type: AirportType, airport: JRSDKAirport)
+    func handleSwapAirports()
     func handleLoad()
     func handleDepartureDateTapped()
     func handleReturnDateTapped()
@@ -81,6 +82,14 @@ class FlightSearchPresenter: NSObject, FlightSearchViewPresenter {
         case .destination:
             viewModel.model.travelSegmentBuilder.destinationAirport = airport
         }
+        viewModel.update()
+        self.view.updateWithViewModel(viewModel: self.viewModel)
+    }
+    
+    func handleSwapAirports() {
+        let tmpAirport = viewModel.model.travelSegmentBuilder.originAirport
+        viewModel.model.travelSegmentBuilder.originAirport = viewModel.model.travelSegmentBuilder.destinationAirport
+        viewModel.model.travelSegmentBuilder.destinationAirport = tmpAirport
         viewModel.update()
         self.view.updateWithViewModel(viewModel: self.viewModel)
     }

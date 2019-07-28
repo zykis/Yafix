@@ -20,6 +20,8 @@ enum DateType {
 protocol DatePickerViewProtocol {
     init(departureDate: Date?, returnDate: Date?, dateType: DateType, selection: @escaping (Date, DateType) -> Void)
     func reloadData()
+    func animateDepartureButtonTapped()
+    func animateReturnButtonTapped()
 }
 
 
@@ -55,6 +57,7 @@ class DatePickerPresenter: NSObject, DatePickerPresenterProtocol {
     }
     
     func handleDepartureButtonTapped() {
+        // TODO: set selected dates, if were previously selected
         self.currentType = .Departure
     }
 
@@ -70,8 +73,12 @@ extension DatePickerPresenter: FSCalendarDelegate {
         switch currentType {
         case .Departure:
             self.departureDate = date
+            self.currentType = .Return
+            self.view.animateReturnButtonTapped()
+            break
         case .Return:
             self.returnDate = date
+            break
         }
         
         self.view.reloadData()

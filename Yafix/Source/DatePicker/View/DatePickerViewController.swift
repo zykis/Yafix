@@ -11,10 +11,12 @@ import FSCalendar
 
 class DatePickerViewController: UIViewController  {
     let presenter: DatePickerPresenter!
-    var datePickerView: FSCalendar!
-    @IBOutlet var departureButton: UIButton!
-    @IBOutlet var returnButton: UIButton!
-    @IBOutlet var closeButton: UIButton!
+    @IBOutlet weak var datePickerView: FSCalendar!
+    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var verticalLeftSeparator: UIView!
+    @IBOutlet weak var verticalRightSeparator: UIView!
+    @IBOutlet weak var departureVerticalStack: UIStackView!
+    @IBOutlet weak var returnVerticalStack: UIStackView!
     
     required init(departureDate: Date?, returnDate: Date?, dateType: DateType, selection: @escaping (Date, DateType) -> Void) {
         self.presenter = DatePickerPresenter(departureDate: departureDate,
@@ -29,40 +31,31 @@ class DatePickerViewController: UIViewController  {
         fatalError("init(coder:) not implemented")
     }
     
-    func addDatePickerView() {
-        var utcCalendar = Calendar.current
-        utcCalendar.timeZone = TimeZone(secondsFromGMT: 0)!
-        self.datePickerView = FSCalendar(frame: .null)
-        self.datePickerView.translatesAutoresizingMaskIntoConstraints = false
+    func setupDatePickerView() {
         self.datePickerView.scrollDirection = .vertical
-        self.datePickerView.allowsMultipleSelection = true
-        
-        self.view.addSubview(self.datePickerView)
-        
-        let guide = view.safeAreaLayoutGuide
-        NSLayoutConstraint.activate([
-            self.datePickerView.topAnchor.constraint(equalTo: self.departureButton.bottomAnchor, constant: 8.0),
-            self.datePickerView.leftAnchor.constraint(equalTo: guide.leftAnchor),
-            self.datePickerView.rightAnchor.constraint(equalTo: guide.rightAnchor),
-            self.datePickerView.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
-        ])
     }
 }
 
 
 // DatePickerViewProtocol
 extension DatePickerViewController: DatePickerViewProtocol {
-    @IBAction func departureButtonTapped() {
+    @objc func departureButtonTapped() {
         self.presenter.handleDepartureButtonTapped()
+        
+        self.animateDepartureButtonTapped()
+        
         datePickerView.reloadData()
     }
     
-    @IBAction func returnButtonTapped() {
+    @objc func returnButtonTapped() {
         self.presenter.handleReturnButtonTapped()
+        
+        self.animateReturnButtonTapped()
+        
         datePickerView.reloadData()
     }
     
-    @IBAction func dismissTapped() {
+    @objc func dismissTapped() {
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -74,6 +67,18 @@ extension DatePickerViewController: DatePickerViewProtocol {
     func reloadData() {
         self.datePickerView.reloadData()
     }
+    
+    func animateDepartureButtonTapped() {
+        // TODO: Animation
+        self.verticalLeftSeparator.backgroundColor = activeColor
+        self.verticalRightSeparator.backgroundColor = inactiveColor
+    }
+    
+    func animateReturnButtonTapped() {
+        // TODO: Animation
+        self.verticalLeftSeparator.backgroundColor = inactiveColor
+        self.verticalRightSeparator.backgroundColor = activeColor
+    }
 }
 
 
@@ -82,9 +87,11 @@ extension DatePickerViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.addDatePickerView()
-        self.closeButton.setImage(UIBarButtonItem.SystemItem.stop.image(), for: .normal)
-        self.closeButton.setTitle("", for: .normal)
+        self.setupDatePickerView()
+        self.closeButton.addTarget(self, action: #selector(DatePickerViewController.dismissTapped), for: .touchUpInside)
+        
+        self.departureVerticalStack.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DatePickerViewController.departureButtonTapped)))
+        self.returnVerticalStack.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DatePickerViewController.returnButtonTapped)))
         
         self.datePickerView.delegate = self.presenter
         self.datePickerView.dataSource = self.presenter

@@ -22,7 +22,6 @@ class FlightSearchViewController: UIViewController, FlightSeachView {
     @IBOutlet var passengersLabel: UILabel!
     @IBOutlet var travelClassLabel: UILabel!
     @IBOutlet var returnLabel: UILabel!
-    
     @IBOutlet var searchButton: UIButton!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -32,6 +31,10 @@ class FlightSearchViewController: UIViewController, FlightSeachView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) not implemented")
+    }
+    
+    @IBAction func swapAirports() {
+        self.presenter.handleSwapAirports()
     }
 }
 
