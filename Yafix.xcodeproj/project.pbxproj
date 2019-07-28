@@ -27,6 +27,12 @@
 		175C807222EDCEB4004313C1 /* icon-swap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175C807022EDCEB4004313C1 /* icon-swap@2x.png */; };
 		175C807322EDCEB4004313C1 /* icon-swap@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175C807122EDCEB4004313C1 /* icon-swap@3x.png */; };
 		175C807522EDE455004313C1 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175C807422EDE455004313C1 /* Date+String.swift */; };
+		175C807922EDF6C7004313C1 /* PassengerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175C807822EDF6C7004313C1 /* PassengerPickerView.swift */; };
+		175C807B22EDF6E4004313C1 /* PassengerPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 175C807A22EDF6E4004313C1 /* PassengerPickerView.xib */; };
+		175C808022EE0BCD004313C1 /* icon-add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175C807C22EE0BCD004313C1 /* icon-add@3x.png */; };
+		175C808122EE0BCD004313C1 /* icon-remove@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175C807D22EE0BCD004313C1 /* icon-remove@3x.png */; };
+		175C808222EE0BCD004313C1 /* icon-add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175C807E22EE0BCD004313C1 /* icon-add@2x.png */; };
+		175C808322EE0BCD004313C1 /* icon-remove@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175C807F22EE0BCD004313C1 /* icon-remove@2x.png */; };
 		1772479E2274281600888535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772479D2274281600888535 /* AppDelegate.swift */; };
 		177247A02274281600888535 /* FlightSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772479F2274281600888535 /* FlightSearchViewController.swift */; };
 		177247A62274281600888535 /* Yafix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 177247A42274281600888535 /* Yafix.xcdatamodeld */; };
@@ -88,6 +94,12 @@
 		175C807022EDCEB4004313C1 /* icon-swap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-swap@2x.png"; sourceTree = "<group>"; };
 		175C807122EDCEB4004313C1 /* icon-swap@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-swap@3x.png"; sourceTree = "<group>"; };
 		175C807422EDE455004313C1 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		175C807822EDF6C7004313C1 /* PassengerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerPickerView.swift; sourceTree = "<group>"; };
+		175C807A22EDF6E4004313C1 /* PassengerPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassengerPickerView.xib; sourceTree = "<group>"; };
+		175C807C22EE0BCD004313C1 /* icon-add@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-add@3x.png"; sourceTree = "<group>"; };
+		175C807D22EE0BCD004313C1 /* icon-remove@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-remove@3x.png"; sourceTree = "<group>"; };
+		175C807E22EE0BCD004313C1 /* icon-add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-add@2x.png"; sourceTree = "<group>"; };
+		175C807F22EE0BCD004313C1 /* icon-remove@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-remove@2x.png"; sourceTree = "<group>"; };
 		1772479A2274281600888535 /* Yafix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yafix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1772479D2274281600888535 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1772479F2274281600888535 /* FlightSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +196,10 @@
 		170FC42A2295EF3800C3A751 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				175C807E22EE0BCD004313C1 /* icon-add@2x.png */,
+				175C807C22EE0BCD004313C1 /* icon-add@3x.png */,
+				175C807F22EE0BCD004313C1 /* icon-remove@2x.png */,
+				175C807D22EE0BCD004313C1 /* icon-remove@3x.png */,
 				175C807022EDCEB4004313C1 /* icon-swap@2x.png */,
 				175C807122EDCEB4004313C1 /* icon-swap@3x.png */,
 				17B9F37522ED28F30033401E /* icon-close@2x.png */,
@@ -244,6 +260,8 @@
 		1723C4462276244A002608DF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				175C807722EDF6B3004313C1 /* TravelClassPicker */,
+				175C807622EDF6A3004313C1 /* PassengerPicker */,
 				1772479F2274281600888535 /* FlightSearchViewController.swift */,
 				170AC6F222742C920067BD77 /* FlightSearchViewController.xib */,
 			);
@@ -296,6 +314,22 @@
 			children = (
 			);
 			path = IATALabel;
+			sourceTree = "<group>";
+		};
+		175C807622EDF6A3004313C1 /* PassengerPicker */ = {
+			isa = PBXGroup;
+			children = (
+				175C807822EDF6C7004313C1 /* PassengerPickerView.swift */,
+				175C807A22EDF6E4004313C1 /* PassengerPickerView.xib */,
+			);
+			path = PassengerPicker;
+			sourceTree = "<group>";
+		};
+		175C807722EDF6B3004313C1 /* TravelClassPicker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TravelClassPicker;
 			sourceTree = "<group>";
 		};
 		177247912274281600888535 = {
@@ -570,23 +604,28 @@
 				179644282292948F00A41091 /* AirportPicker.png in Resources */,
 				175C807322EDCEB4004313C1 /* icon-swap@3x.png in Resources */,
 				179644292292948F00A41091 /* DatePicker.png in Resources */,
+				175C808322EE0BCD004313C1 /* icon-remove@2x.png in Resources */,
 				170FC42F2295F07500C3A751 /* back-button@3x.png in Resources */,
 				172012EC229E720B00FA40A7 /* DatePickerViewController.xib in Resources */,
 				17B9F37822ED28F30033401E /* icon-close@3x.png in Resources */,
 				17B9F37722ED28F30033401E /* icon-close@2x.png in Resources */,
+				175C808222EE0BCD004313C1 /* icon-add@2x.png in Resources */,
 				179644262292948F00A41091 /* PassengerPicker.png in Resources */,
 				179644252292948F00A41091 /* SearchResult.png in Resources */,
 				179644272292948F00A41091 /* Overall.gif in Resources */,
 				177247AB2274281700888535 /* LaunchScreen.storyboard in Resources */,
 				171DFA94227C6D05006DD6DA /* AirportPickerCell.xib in Resources */,
+				175C808122EE0BCD004313C1 /* icon-remove@3x.png in Resources */,
 				17A0FDA32282C3E00041B802 /* SearchResultCell.xib in Resources */,
 				170FC4302295F07500C3A751 /* back-button@2x.png in Resources */,
 				17A0FD982282B32D0041B802 /* SearchResultsViewController.xib in Resources */,
+				175C808022EE0BCD004313C1 /* icon-add@3x.png in Resources */,
 				17A9D80F2274940500E8BA3F /* LoadingViewController.xib in Resources */,
 				1781052A227B42C900F510FF /* AirportPickerViewController.xib in Resources */,
 				170AC6F322742C920067BD77 /* FlightSearchViewController.xib in Resources */,
 				177247A82274281700888535 /* Assets.xcassets in Resources */,
 				175C807222EDCEB4004313C1 /* icon-swap@2x.png in Resources */,
+				175C807B22EDF6E4004313C1 /* PassengerPickerView.xib in Resources */,
 				1796442A2292948F00A41091 /* FlightSearch.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -683,6 +722,7 @@
 				17A0FD9E2282BA260041B802 /* SearchResultsViewModel.swift in Sources */,
 				17A0FD992282B32D0041B802 /* SearchResultsViewController.swift in Sources */,
 				17385FBE2280B13100D04A1A /* FlightSearchModel.swift in Sources */,
+				175C807922EDF6C7004313C1 /* PassengerPickerView.swift in Sources */,
 				171DFA96227DB0BA006DD6DA /* AirportPickerCell.swift in Sources */,
 				1772479E2274281600888535 /* AppDelegate.swift in Sources */,
 				172012F1229E78DB00FA40A7 /* DatePickerPresenter.swift in Sources */,

@@ -40,12 +40,12 @@ class DatePickerPresenter: NSObject, DatePickerPresenterProtocol {
     var currentType: DateType = .Departure
     var departureDate: Date? {
         didSet {
-            self.view.updateDepartureLabel(dateRepresentation: departureDate!.representation())
+            self.view.updateDepartureLabel(dateRepresentation: departureDate?.representation() ?? Date().representation())
         }
     }
     var returnDate: Date? {
         didSet {
-            self.view.updateReturnLabel(dateRepresentation: returnDate!.representation())
+            self.view.updateReturnLabel(dateRepresentation: returnDate?.representation() ?? "Optional")
         }
     }
     let selection: (Date, DateType) -> Void

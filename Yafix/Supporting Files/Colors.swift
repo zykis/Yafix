@@ -11,3 +11,4 @@ import UIKit
 var buttonColor = UIColor(red: 38/255.0, green: 187/255.0, blue: 233/255.0, alpha: 1.0)
 var inactiveColor = UIColor(red: 104/255.0, green: 108/255.0, blue: 131/255.0, alpha: 1.0)
 var activeColor = UIColor(red: 232/255.0, green: 106/255.0, blue: 44/255.0, alpha: 1.0)
+var backgroundHighlightedColor = UIColor(red: 33/255.0, green: 39/255.0, blue: 62/255.0, alpha: 1.0)

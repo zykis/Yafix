@@ -23,6 +23,7 @@ class FlightSearchViewController: UIViewController, FlightSeachView {
     @IBOutlet var travelClassLabel: UILabel!
     @IBOutlet var returnLabel: UILabel!
     @IBOutlet var searchButton: UIButton!
+    @IBOutlet weak var passengersStackView: UIStackView!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -52,6 +53,8 @@ extension FlightSearchViewController {
         self.departureDateLabel.isUserInteractionEnabled = true
         self.returnLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(returnDateTapped)))
         self.returnLabel.isUserInteractionEnabled = true
+        self.passengersStackView.isUserInteractionEnabled = true
+        self.passengersStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(passengersTapped)))
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.presenter.handleLoad()
     }
@@ -111,5 +114,84 @@ extension FlightSearchViewController {
             self.presenter.handleDateSelected(date: date, type: type)
         }
         self.present(dp, animated: true, completion: nil)
+    }
+}
+
+
+// MARK: PassengersPickerView
+extension FlightSearchViewController {
+    @objc func passengersTapped() {
+        // Adding shadow to main view
+        let shadow = UIView(frame: self.view.frame)
+        // Setting up accessibilityIdentifier to remove view later
+        shadow.accessibilityIdentifier = "shadow"
+        shadow.backgroundColor = UIColor(white: 0.0, alpha: 0.0)
+        shadow.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(passengersDoneTapped)))
+        self.view.addSubview(shadow)
+        
+        // Presenting passenger picker
+        let passengersPickerView: PassengersPickerView = PassengersPickerView.instanceFromNib()
+        // Connecting done button
+        passengersPickerView.doneButton.addTarget(self, action: #selector(passengersDoneTapped), for: .touchUpInside)
+        // Getting passengers info from model (not cool, right)
+        let passengers: Passengers = self.presenter.getPassengers()
+        // Updating view with it
+        passengersPickerView.updateWith(passengers: passengers)
+        
+        // Setting up accessibilityIdentifier to remove view later
+        passengersPickerView.accessibilityIdentifier = "passengersPickerView"
+        
+        let targetFrame = CGRect(x: 0,
+                                 y: self.view.bounds.height - passengersPickerView.bounds.height + 24,
+                                 width: self.view.bounds.width,
+                                 height: self.view.bounds.height)
+        
+        let passengersPickerViewFrame = CGRect(x: 0,
+                                               y: self.view.bounds.height,
+                                               width: self.view.bounds.width,
+                                               height: self.view.bounds.height)
+        
+        passengersPickerView.frame = passengersPickerViewFrame
+        passengersPickerView.layer.cornerRadius = 16.0
+        self.view.addSubview(passengersPickerView)
+        
+        // Animation
+        UIView.animate(withDuration: 0.2) {
+            shadow.backgroundColor = UIColor(white: 0.0, alpha: 0.25)
+            passengersPickerView.frame = targetFrame
+        }
+    }
+    
+    @IBAction func passengersDoneTapped() {
+        passengersPickerViewDismiss()
+    }
+    
+    func passengersPickerViewDismiss() {
+        var shadow: UIView? = nil
+        var passengersPickerView: PassengersPickerView? = nil
+        
+        // looking for subviews with accessibility identifiers
+        for subview in self.view.subviews {
+            if subview.accessibilityIdentifier == "shadow" {
+                shadow = subview
+            }
+            if subview.accessibilityIdentifier == "passengersPickerView" {
+                passengersPickerView = subview as? PassengersPickerView
+            }
+        }
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            shadow?.backgroundColor = UIColor(white: 0.0, alpha: 0.0)
+            passengersPickerView?.frame = CGRect(x: 0,
+                                                 y: self.view.bounds.height,
+                                                 width: self.view.bounds.width,
+                                                 height: self.view.bounds.height)
+        }) { (finished) in
+            // Update model with new passengers count
+            self.presenter.updatePassengers(passengers: passengersPickerView?.getPassengers() ?? Passengers(adults: 0, children: 0, infants: 0))
+            // Remove subviews
+            shadow?.removeFromSuperview()
+            passengersPickerView?.removeFromSuperview()
+        }
     }
 }

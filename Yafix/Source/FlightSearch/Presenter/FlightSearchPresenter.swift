@@ -9,10 +9,19 @@
 import Foundation
 import AviasalesSDK
 
+
 enum AirportType {
     case origin
     case destination
 }
+
+
+struct Passengers {
+    var adults: UInt = 0
+    var children: UInt = 0
+    var infants: UInt = 0
+}
+
 
 protocol FlightSeachView: class {
     func searchButtonTapped()
@@ -27,6 +36,8 @@ protocol FlightSeachView: class {
 protocol FlightSearchViewPresenter {
     init(view: FlightSeachView, viewModel: FlightSearchViewModel)
     func buildSearchInfo() -> JRSDKSearchInfo?
+    func getPassengers() -> Passengers
+    func updatePassengers(passengers: Passengers)
     func handleSearch()
     func handleAirportSelected(type: AirportType, airport: JRSDKAirport)
     func handleSwapAirports()
@@ -116,6 +127,21 @@ class FlightSearchPresenter: NSObject, FlightSearchViewPresenter {
         }
         
         viewModel.update()
+        self.view.updateWithViewModel(viewModel: self.viewModel)
+    }
+    
+    func getPassengers() -> Passengers {
+        return Passengers(adults: viewModel.model.searchInfoBuilder.adults,
+                          children: viewModel.model.searchInfoBuilder.children,
+                          infants: viewModel.model.searchInfoBuilder.infants)
+    }
+    
+    func updatePassengers(passengers: Passengers) {
+        self.viewModel.model.searchInfoBuilder.adults = passengers.adults
+        self.viewModel.model.searchInfoBuilder.children = passengers.children
+        self.viewModel.model.searchInfoBuilder.infants = passengers.infants
+        
+        self.viewModel.update()
         self.view.updateWithViewModel(viewModel: self.viewModel)
     }
 }

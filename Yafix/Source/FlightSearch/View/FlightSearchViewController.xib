@@ -18,6 +18,7 @@
                 <outlet property="originDescriptionLabel" destination="33j-V3-xBA" id="Z8h-mJ-GLA"/>
                 <outlet property="originIATALabel" destination="fNw-mE-1EU" id="mQg-1D-ok6"/>
                 <outlet property="passengersLabel" destination="BQ4-7u-pVJ" id="vxr-YC-gon"/>
+                <outlet property="passengersStackView" destination="T18-5N-MO5" id="FJE-I1-3Eu"/>
                 <outlet property="returnLabel" destination="ewH-CS-jD1" id="sXH-ya-uxE"/>
                 <outlet property="searchButton" destination="P1W-dB-5D9" id="Gtm-rJ-EiR"/>
                 <outlet property="travelClassLabel" destination="523-07-E1V" id="Gu9-XH-R1N"/>
