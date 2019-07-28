@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		170AC6F322742C920067BD77 /* FlightSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170AC6F222742C920067BD77 /* FlightSearchViewController.xib */; };
 		170AC6F522742CE80067BD77 /* FlightSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170AC6F422742CE80067BD77 /* FlightSearchPresenter.swift */; };
+		170B316C22A0166900C1832B /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B316B22A0166900C1832B /* CalendarCell.swift */; };
+		170B317022A03CCE00C1832B /* UIBarButtonItem.SystemItem + image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B316F22A03CCE00C1832B /* UIBarButtonItem.SystemItem + image.swift */; };
 		170FC4292295395200C3A751 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170FC4282295395200C3A751 /* DatePickerViewController.swift */; };
 		170FC42F2295F07500C3A751 /* back-button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 170FC42D2295F07500C3A751 /* back-button@3x.png */; };
 		170FC4302295F07500C3A751 /* back-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 170FC42E2295F07500C3A751 /* back-button@2x.png */; };
@@ -62,6 +64,8 @@
 /* Begin PBXFileReference section */
 		170AC6F222742C920067BD77 /* FlightSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightSearchViewController.xib; sourceTree = "<group>"; };
 		170AC6F422742CE80067BD77 /* FlightSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchPresenter.swift; sourceTree = "<group>"; };
+		170B316B22A0166900C1832B /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		170B316F22A03CCE00C1832B /* UIBarButtonItem.SystemItem + image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem.SystemItem + image.swift"; sourceTree = "<group>"; };
 		170FC4282295395200C3A751 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		170FC42D2295F07500C3A751 /* back-button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button@3x.png"; sourceTree = "<group>"; };
 		170FC42E2295F07500C3A751 /* back-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button@2x.png"; sourceTree = "<group>"; };
@@ -146,9 +150,18 @@
 			path = FlightSearch;
 			sourceTree = "<group>";
 		};
+		170B316A22A015E000C1832B /* FSCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				170B316B22A0166900C1832B /* CalendarCell.swift */,
+			);
+			path = FSCalendar;
+			sourceTree = "<group>";
+		};
 		170FC4272295394500C3A751 /* DatePicker */ = {
 			isa = PBXGroup;
 			children = (
+				170B316A22A015E000C1832B /* FSCalendar */,
 				172012EF229E78C000FA40A7 /* ViewModel */,
 				172012EE229E78B300FA40A7 /* Presenter */,
 				172012ED229E78AF00FA40A7 /* View */,
@@ -182,6 +195,7 @@
 				171DFA9A227DD6FD006DD6DA /* UITableViewCell+Identifier.swift */,
 				171DFA9C227F7D01006DD6DA /* JRSDKAirportBuilder+Sample.swift */,
 				17385FB9227FE79600D04A1A /* UIViewController+dismiss.swift */,
+				170B316F22A03CCE00C1832B /* UIBarButtonItem.SystemItem + image.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -593,20 +607,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Yafix/Pods-Yafix-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/AviasalesSDK/AviasalesSDKResources.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-Yafix/Pods-Yafix-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AviasalesSDKResources.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-Yafix/Pods-Yafix-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yafix/Pods-Yafix-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yafix/Pods-Yafix-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A1B97ACDA8F18B5274F3D8B7 /* [CP] Embed Pods Frameworks */ = {
@@ -615,24 +624,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Yafix/Pods-Yafix-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/RSDayFlow/RSDayFlow.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Yafix/Pods-Yafix-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSDayFlow.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Yafix/Pods-Yafix-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yafix/Pods-Yafix-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yafix/Pods-Yafix-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -650,8 +650,10 @@
 				171DFA98227DD3B4006DD6DA /* AiroirtPickerCellViewModel.swift in Sources */,
 				17A9D8112274944D00E8BA3F /* LoadingViewController.swift in Sources */,
 				170AC6F522742CE80067BD77 /* FlightSearchPresenter.swift in Sources */,
+				170B317022A03CCE00C1832B /* UIBarButtonItem.SystemItem + image.swift in Sources */,
 				17A9D8132274964200E8BA3F /* LoadingPresenter.swift in Sources */,
 				1781052E227B455300F510FF /* AirportPickerPresenter.swift in Sources */,
+				170B316C22A0166900C1832B /* CalendarCell.swift in Sources */,
 				17A0FDA12282C3D30041B802 /* SearchResultCell.swift in Sources */,
 				17A0FD972282B32D0041B802 /* SearchResultsPresenter.swift in Sources */,
 				17A0FD9E2282BA260041B802 /* SearchResultsViewModel.swift in Sources */,

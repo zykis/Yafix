@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import RSDayFlow
+
+import FSCalendar
 
 
 enum DateType {
@@ -17,96 +18,77 @@ enum DateType {
 
 
 protocol DatePickerViewProtocol {
-    init(departureDate: Date?, returnDate: Date?, selection: @escaping (Date, DateType) -> Void)
+    init(departureDate: Date?, returnDate: Date?, dateType: DateType, selection: @escaping (Date, DateType) -> Void)
+    func reloadData()
 }
 
 
 protocol DatePickerPresenterProtocol {
-    init(departureDate: Date?, returnDate: Date?, selection: @escaping (Date, DateType) -> Void)
+    init(departureDate: Date?, returnDate: Date?, dateType: DateType, selection: @escaping (Date, DateType) -> Void)
+    func handleDoneTapped()
     func handleDepartureButtonTapped()
     func handleReturnButtonTapped()
 }
 
 
 class DatePickerPresenter: NSObject, DatePickerPresenterProtocol {
+    var view: DatePickerViewProtocol!
     var currentType: DateType = .Departure
     var departureDate: Date?
     var returnDate: Date?
     let selection: (Date, DateType) -> Void
     
-    required init(departureDate: Date?, returnDate: Date?, selection: @escaping (Date, DateType) -> Void) {
+    required init(departureDate: Date?, returnDate: Date?, dateType: DateType, selection: @escaping (Date, DateType) -> Void) {
         self.departureDate = departureDate
         self.returnDate = returnDate
+        self.currentType = dateType
         self.selection = selection
+    }
+    
+    func handleDoneTapped() {
+        if let departureDate = self.departureDate {
+            self.selection(departureDate, .Departure)
+        }
+        if let returnDate = self.returnDate {
+            self.selection(returnDate, .Return)
+        }
     }
     
     func handleDepartureButtonTapped() {
         self.currentType = .Departure
     }
-    
+
     func handleReturnButtonTapped() {
         self.currentType = .Return
     }
 }
 
 
-// RSDFDatePickerViewDelegate
-extension DatePickerPresenter: RSDFDatePickerViewDelegate {
-    func datePickerView(_ view: RSDFDatePickerView, didSelect date: Date) {
-        let calendar = Calendar.current
-        let hours = calendar.component(.hour, from: Date())
-        let minutes = calendar.component(.minute, from: Date())
-        let seconds = calendar.component(.second, from: Date())
-        let dateWithCurrentTime = date + TimeInterval(hours * 3600 + minutes * 60 + seconds)
-        
+// FSCalendarDelegate
+extension DatePickerPresenter: FSCalendarDelegate {
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         switch currentType {
         case .Departure:
-            self.departureDate = dateWithCurrentTime
+            self.departureDate = date
         case .Return:
-            self.returnDate = dateWithCurrentTime
+            self.returnDate = date
         }
         
-        self.selection(dateWithCurrentTime, currentType)
+        self.view.reloadData()
     }
     
-    func datePickerView(_ view: RSDFDatePickerView, shouldSelect date: Date) -> Bool {
+    func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
         var calendar = Calendar.current
         calendar.timeZone = TimeZone(secondsFromGMT: 0)!
         
         return (date >= calendar.startOfDay(for: Date()))
     }
-    
-    func datePickerView(_ view: RSDFDatePickerView, shouldHighlight date: Date) -> Bool {
-        return true
-    }
 }
 
-// RSDFDatePickerViewDataSource
-extension DatePickerPresenter: RSDFDatePickerViewDataSource {
-    func datePickerView(_ view: RSDFDatePickerView, shouldMark date: Date) -> Bool {
-        var calendar = Calendar.current
-        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
-        
-        if let returnDate = self.returnDate, let departureDate = self.departureDate {
-            let selected = calendar.startOfDay(for: date)
-            let dep = calendar.startOfDay(for: departureDate)
-            let ret = calendar.startOfDay(for: returnDate)
-            let rv = ((selected >= dep) && (selected <= ret))
-            return rv
-        }
-        
-        if let departureDate = self.departureDate {
-            return calendar.startOfDay(for: date) == calendar.startOfDay(for: departureDate)
-        }
-        
-        if let returnDate = self.returnDate {
-            return calendar.startOfDay(for: date) == calendar.startOfDay(for: returnDate)
-        }
-        
-        return false
-    }
-    
-    func datePickerView(_ view: RSDFDatePickerView, markImageColorFor date: Date) -> UIColor {
-        return UIColor.green
+
+// FSCalendarDataSource
+extension DatePickerPresenter: FSCalendarDataSource {
+    func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
+        /// TODO: configure cell to pick date range
     }
 }

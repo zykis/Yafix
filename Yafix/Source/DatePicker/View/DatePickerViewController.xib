@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatePickerViewController" customModule="Yafix" customModuleProvider="target">
             <connections>
-                <outlet property="rsdfDatePickerView" destination="dRQ-bl-76M" id="XIi-h3-paZ"/>
+                <outlet property="closeButton" destination="btW-X0-MZ8" id="BHJ-Tj-4La"/>
+                <outlet property="departureButton" destination="xC0-lq-crY" id="Vyo-NE-VRM"/>
+                <outlet property="returnButton" destination="I7u-vy-jCg" id="r6V-1m-Xjp"/>
                 <outlet property="view" destination="JSe-6X-1AK" id="BUG-z0-FXI"/>
             </connections>
         </placeholder>
@@ -21,42 +23,46 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btW-X0-MZ8">
-                    <rect key="frame" x="20" y="44" width="30" height="34"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btW-X0-MZ8" customClass="UIBar">
+                    <rect key="frame" x="20" y="52" width="30" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="X"/>
                     <connections>
                         <action selector="dismissTapped" destination="-1" eventType="touchUpInside" id="n90-li-vZu"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxX-iB-0v4">
-                    <rect key="frame" x="348" y="86" width="46" height="30"/>
-                    <state key="normal" title="Return"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cb6-oC-zby">
+                    <rect key="frame" x="353" y="56" width="37" height="30"/>
+                    <state key="normal" title="Done"/>
                     <connections>
-                        <action selector="returnButtonTapped" destination="-1" eventType="touchUpInside" id="6Zy-6w-efe"/>
+                        <action selector="doneTapped" destination="-1" eventType="touchUpInside" id="W6p-Br-hhc"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dRQ-bl-76M" customClass="RSDFDatePickerView">
-                    <rect key="frame" x="0.0" y="169" width="414" height="727"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFS-v4-5J2">
-                    <rect key="frame" x="20" y="86" width="70" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xC0-lq-crY">
+                    <rect key="frame" x="20" y="94" width="70" height="30"/>
                     <state key="normal" title="Departure"/>
                     <connections>
-                        <action selector="departureButtonTapped" destination="-1" eventType="touchUpInside" id="CYz-im-83T"/>
+                        <action selector="departureButtonTapped" destination="-1" eventType="touchUpInside" id="z1H-m3-gtQ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7u-vy-jCg">
+                    <rect key="frame" x="344" y="94" width="46" height="30"/>
+                    <state key="normal" title="Return"/>
+                    <connections>
+                        <action selector="returnButtonTapped" destination="-1" eventType="touchUpInside" id="PgL-Sb-9e7"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="mvh-bj-JoD" firstAttribute="trailing" secondItem="lxX-iB-0v4" secondAttribute="trailing" constant="20" id="5HF-FZ-ZgH"/>
+                <constraint firstItem="xC0-lq-crY" firstAttribute="leading" secondItem="btW-X0-MZ8" secondAttribute="leading" id="1os-oQ-CRV"/>
+                <constraint firstItem="Cb6-oC-zby" firstAttribute="bottom" secondItem="btW-X0-MZ8" secondAttribute="bottom" id="5xm-sg-bQg"/>
+                <constraint firstItem="mvh-bj-JoD" firstAttribute="trailing" secondItem="Cb6-oC-zby" secondAttribute="trailing" constant="24" id="CYP-Pa-iqY"/>
                 <constraint firstItem="btW-X0-MZ8" firstAttribute="leading" secondItem="mvh-bj-JoD" secondAttribute="leading" constant="20" id="G83-iS-bic"/>
-                <constraint firstItem="EFS-v4-5J2" firstAttribute="leading" secondItem="mvh-bj-JoD" secondAttribute="leading" constant="20" id="kaB-1D-o5V"/>
-                <constraint firstItem="btW-X0-MZ8" firstAttribute="top" secondItem="mvh-bj-JoD" secondAttribute="top" id="pcb-Dh-BkL"/>
-                <constraint firstItem="EFS-v4-5J2" firstAttribute="centerY" secondItem="lxX-iB-0v4" secondAttribute="centerY" id="prg-5M-GIZ"/>
-                <constraint firstItem="EFS-v4-5J2" firstAttribute="top" secondItem="mvh-bj-JoD" secondAttribute="top" constant="42" id="uNT-tr-jkd"/>
+                <constraint firstItem="xC0-lq-crY" firstAttribute="top" secondItem="btW-X0-MZ8" secondAttribute="bottom" constant="8" id="GrX-fc-WoI"/>
+                <constraint firstItem="I7u-vy-jCg" firstAttribute="centerY" secondItem="xC0-lq-crY" secondAttribute="centerY" id="Vjx-9X-Pb9"/>
+                <constraint firstItem="btW-X0-MZ8" firstAttribute="top" secondItem="mvh-bj-JoD" secondAttribute="top" constant="8" id="pcb-Dh-BkL"/>
+                <constraint firstItem="I7u-vy-jCg" firstAttribute="trailing" secondItem="Cb6-oC-zby" secondAttribute="trailing" id="sYL-13-3w5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="mvh-bj-JoD"/>
             <point key="canvasLocation" x="31.884057971014496" y="105.80357142857143"/>

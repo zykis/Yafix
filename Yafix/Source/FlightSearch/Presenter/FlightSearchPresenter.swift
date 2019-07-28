@@ -20,7 +20,7 @@ protocol FlightSeachView: class {
     func destinationAirportTapped()
     func updateWithViewModel(viewModel: FlightSearchViewModel)
     func presentLoadingViewWithSearchInfo(searchInfo: JRSDKSearchInfo)
-    func presentDatePicker(departureDate: Date?, returnDate: Date?)
+    func presentDatePicker(departureDate: Date?, returnDate: Date?, dateType: DateType)
 }
 
 
@@ -30,7 +30,8 @@ protocol FlightSearchViewPresenter {
     func handleSearch()
     func handleAirportSelected(type: AirportType, airport: JRSDKAirport)
     func handleLoad()
-    func handleDateTapped()
+    func handleDepartureDateTapped()
+    func handleReturnDateTapped()
     func handleDateSelected(date: Date, type: DateType)
 }
 
@@ -84,10 +85,16 @@ class FlightSearchPresenter: NSObject, FlightSearchViewPresenter {
         self.view.updateWithViewModel(viewModel: self.viewModel)
     }
     
-    func handleDateTapped() {
+    func handleDepartureDateTapped() {
         let departureDate = viewModel.model.travelSegmentBuilder.departureDate
         let returnDate = viewModel.model.returnDate
-        self.view.presentDatePicker(departureDate: departureDate, returnDate: returnDate)
+        self.view.presentDatePicker(departureDate: departureDate, returnDate: returnDate, dateType: .Departure)
+    }
+    
+    func handleReturnDateTapped() {
+        let departureDate = viewModel.model.travelSegmentBuilder.departureDate
+        let returnDate = viewModel.model.returnDate
+        self.view.presentDatePicker(departureDate: departureDate, returnDate: returnDate, dateType: .Return)
     }
     
     func handleDateSelected(date: Date, type: DateType) {

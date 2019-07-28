@@ -9,5 +9,5 @@ target "Yafix" do
   	pod 'AviasalesSDK', '~> 3.1.3'
 	pod 'Fabric'
 	pod 'Crashlytics'
-	pod 'RSDayFlow'
+	pod 'FSCalendar'
 end

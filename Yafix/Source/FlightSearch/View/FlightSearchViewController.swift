@@ -8,7 +8,8 @@
 
 import UIKit
 import AviasalesSDK
-import RSDayFlow
+//import RSDayFlow
+import FSCalendar
 
 class FlightSearchViewController: UIViewController, FlightSeachView {
     var presenter: FlightSearchViewPresenter!
@@ -44,9 +45,9 @@ extension FlightSearchViewController {
         self.originIATALabel.isUserInteractionEnabled = true
         self.destinationIATALabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(destinationAirportTapped)))
         self.destinationIATALabel.isUserInteractionEnabled = true
-        self.departureDateLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dateTapped)))
+        self.departureDateLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(departureDateTapped)))
         self.departureDateLabel.isUserInteractionEnabled = true
-        self.returnLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dateTapped)))
+        self.returnLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(returnDateTapped)))
         self.returnLabel.isUserInteractionEnabled = true
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.presenter.handleLoad()
@@ -94,12 +95,16 @@ extension FlightSearchViewController {
         self.navigationController?.pushViewController(loadingView, animated: true)
     }
     
-    @objc func dateTapped() {
-        self.presenter.handleDateTapped()
+    @objc func departureDateTapped() {
+        self.presenter.handleDepartureDateTapped()
     }
     
-    func presentDatePicker(departureDate: Date?, returnDate: Date?) {
-        let dp = DatePickerViewController(departureDate: departureDate, returnDate: returnDate) { (date, type) in
+    @objc func returnDateTapped() {
+        self.presenter.handleReturnDateTapped()
+    }
+    
+    func presentDatePicker(departureDate: Date?, returnDate: Date?, dateType: DateType) {
+        let dp = DatePickerViewController(departureDate: departureDate, returnDate: returnDate, dateType: dateType) { (date, type) in
             self.presenter.handleDateSelected(date: date, type: type)
         }
         self.present(dp, animated: true, completion: nil)
