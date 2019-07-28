@@ -22,6 +22,8 @@ protocol DatePickerViewProtocol {
     func reloadData()
     func animateDepartureButtonTapped()
     func animateReturnButtonTapped()
+    func updateDepartureLabel(dateRepresentation: String)
+    func updateReturnLabel(dateRepresentation: String)
 }
 
 
@@ -36,8 +38,16 @@ protocol DatePickerPresenterProtocol {
 class DatePickerPresenter: NSObject, DatePickerPresenterProtocol {
     var view: DatePickerViewProtocol!
     var currentType: DateType = .Departure
-    var departureDate: Date?
-    var returnDate: Date?
+    var departureDate: Date? {
+        didSet {
+            self.view.updateDepartureLabel(dateRepresentation: departureDate!.representation())
+        }
+    }
+    var returnDate: Date? {
+        didSet {
+            self.view.updateReturnLabel(dateRepresentation: returnDate!.representation())
+        }
+    }
     let selection: (Date, DateType) -> Void
     
     required init(departureDate: Date?, returnDate: Date?, dateType: DateType, selection: @escaping (Date, DateType) -> Void) {

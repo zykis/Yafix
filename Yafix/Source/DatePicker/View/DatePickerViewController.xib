@@ -14,7 +14,9 @@
             <connections>
                 <outlet property="closeButton" destination="btW-X0-MZ8" id="iJ7-pC-4hw"/>
                 <outlet property="datePickerView" destination="uMy-Mh-Mzm" id="HDK-LD-Hm6"/>
+                <outlet property="departureLabel" destination="Gbx-td-eDJ" id="vuA-yQ-h0b"/>
                 <outlet property="departureVerticalStack" destination="ngZ-4L-Or4" id="xSD-48-kFC"/>
+                <outlet property="returnLabel" destination="PXr-iN-quT" id="mFM-5P-Cmd"/>
                 <outlet property="returnVerticalStack" destination="R6R-o5-IHM" id="9HU-Gh-hgl"/>
                 <outlet property="verticalLeftSeparator" destination="bOH-Fl-0gz" id="Rwd-7M-8XI"/>
                 <outlet property="verticalRightSeparator" destination="f6o-qs-gTo" id="YIB-q8-DmT"/>

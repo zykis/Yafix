@@ -17,6 +17,8 @@ class DatePickerViewController: UIViewController  {
     @IBOutlet weak var verticalRightSeparator: UIView!
     @IBOutlet weak var departureVerticalStack: UIStackView!
     @IBOutlet weak var returnVerticalStack: UIStackView!
+    @IBOutlet weak var departureLabel: UILabel!
+    @IBOutlet weak var returnLabel: UILabel!
     
     required init(departureDate: Date?, returnDate: Date?, dateType: DateType, selection: @escaping (Date, DateType) -> Void) {
         self.presenter = DatePickerPresenter(departureDate: departureDate,
@@ -78,6 +80,14 @@ extension DatePickerViewController: DatePickerViewProtocol {
         // TODO: Animation
         self.verticalLeftSeparator.backgroundColor = inactiveColor
         self.verticalRightSeparator.backgroundColor = activeColor
+    }
+    
+    func updateDepartureLabel(dateRepresentation: String) {
+        self.departureLabel.text = dateRepresentation
+    }
+    
+    func updateReturnLabel(dateRepresentation: String) {
+        self.returnLabel.text = dateRepresentation
     }
 }
 
