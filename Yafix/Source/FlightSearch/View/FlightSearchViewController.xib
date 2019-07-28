@@ -22,6 +22,7 @@
                 <outlet property="returnLabel" destination="ewH-CS-jD1" id="sXH-ya-uxE"/>
                 <outlet property="searchButton" destination="P1W-dB-5D9" id="Gtm-rJ-EiR"/>
                 <outlet property="travelClassLabel" destination="523-07-E1V" id="Gu9-XH-R1N"/>
+                <outlet property="travelClassStackView" destination="8hd-cG-uaq" id="y87-yU-3Rp"/>
                 <outlet property="view" destination="RGk-KR-vv8" id="xux-pc-9Nb"/>
             </connections>
         </placeholder>

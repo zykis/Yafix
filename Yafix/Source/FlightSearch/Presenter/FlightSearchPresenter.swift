@@ -38,6 +38,8 @@ protocol FlightSearchViewPresenter {
     func buildSearchInfo() -> JRSDKSearchInfo?
     func getPassengers() -> Passengers
     func updatePassengers(passengers: Passengers)
+    func getTravelClass() -> TravelClass
+    func updateTravelClass(travelClass: TravelClass)
     func handleSearch()
     func handleAirportSelected(type: AirportType, airport: JRSDKAirport)
     func handleSwapAirports()
@@ -140,6 +142,41 @@ class FlightSearchPresenter: NSObject, FlightSearchViewPresenter {
         self.viewModel.model.searchInfoBuilder.adults = passengers.adults
         self.viewModel.model.searchInfoBuilder.children = passengers.children
         self.viewModel.model.searchInfoBuilder.infants = passengers.infants
+        
+        self.viewModel.update()
+        self.view.updateWithViewModel(viewModel: self.viewModel)
+    }
+    
+    func getTravelClass() -> TravelClass {
+        switch self.viewModel.model.searchInfoBuilder.travelClass {
+        case .economy:
+            return TravelClass.Economy
+        case .premiumEconomy:
+            return TravelClass.PremiumEconomy
+        case .business:
+            return TravelClass.Business
+        case .first:
+            return TravelClass.FirstClass
+        default:
+            return TravelClass.Economy
+        }
+    }
+    
+    func updateTravelClass(travelClass: TravelClass) {
+        switch travelClass {
+        case .Economy:
+            self.viewModel.model.searchInfoBuilder.travelClass = .economy
+            break
+        case .PremiumEconomy:
+            self.viewModel.model.searchInfoBuilder.travelClass = .premiumEconomy
+            break
+        case .Business:
+            self.viewModel.model.searchInfoBuilder.travelClass = .business
+            break
+        case .FirstClass:
+            self.viewModel.model.searchInfoBuilder.travelClass = .first
+            break
+        }
         
         self.viewModel.update()
         self.view.updateWithViewModel(viewModel: self.viewModel)

@@ -24,6 +24,7 @@ class FlightSearchViewController: UIViewController, FlightSeachView {
     @IBOutlet var returnLabel: UILabel!
     @IBOutlet var searchButton: UIButton!
     @IBOutlet weak var passengersStackView: UIStackView!
+    @IBOutlet weak var travelClassStackView: UIStackView!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -55,6 +56,8 @@ extension FlightSearchViewController {
         self.returnLabel.isUserInteractionEnabled = true
         self.passengersStackView.isUserInteractionEnabled = true
         self.passengersStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(passengersTapped)))
+        self.travelClassStackView.isUserInteractionEnabled = true
+        self.travelClassStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(travelClassTapped)))
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.presenter.handleLoad()
     }
@@ -162,8 +165,8 @@ extension FlightSearchViewController {
         }
     }
     
-    @IBAction func passengersDoneTapped() {
-        passengersPickerViewDismiss()
+    @objc func passengersDoneTapped() {
+        self.passengersPickerViewDismiss()
     }
     
     func passengersPickerViewDismiss() {
@@ -192,6 +195,86 @@ extension FlightSearchViewController {
             // Remove subviews
             shadow?.removeFromSuperview()
             passengersPickerView?.removeFromSuperview()
+        }
+    }
+}
+
+
+
+// MARK: TravelClassPickerView
+extension FlightSearchViewController {
+    @objc func travelClassTapped() {
+        // Adding shadow to main view
+        let shadow = UIView(frame: self.view.frame)
+        // Setting up accessibilityIdentifier to remove view later
+        shadow.accessibilityIdentifier = "shadow"
+        shadow.backgroundColor = UIColor(white: 0.0, alpha: 0.0)
+        shadow.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(travelClassDoneTapped)))
+        self.view.addSubview(shadow)
+        
+        // Presenting travel class picker
+        let travelClassPickerView: TravelClassPickerView = TravelClassPickerView.instanceFromNib()
+        // Connecting done button
+        travelClassPickerView.doneButton.addTarget(self, action: #selector(travelClassDoneTapped), for: .touchUpInside)
+        // Getting passengers info from model (not cool, right)
+        let travelClass: TravelClass = self.presenter.getTravelClass()
+        // Updating view with it
+        travelClassPickerView.updateWith(travelClass: travelClass)
+        
+        // Setting up accessibilityIdentifier to remove view later
+        travelClassPickerView.accessibilityIdentifier = "travelClassPickerView"
+        
+        let targetFrame = CGRect(x: 0,
+                                 y: self.view.bounds.height - travelClassPickerView.bounds.height + 24,
+                                 width: self.view.bounds.width,
+                                 height: self.view.bounds.height)
+        
+        let passengersPickerViewFrame = CGRect(x: 0,
+                                               y: self.view.bounds.height,
+                                               width: self.view.bounds.width,
+                                               height: self.view.bounds.height)
+        
+        travelClassPickerView.frame = passengersPickerViewFrame
+        travelClassPickerView.layer.cornerRadius = 16.0
+        self.view.addSubview(travelClassPickerView)
+        
+        // Animation
+        UIView.animate(withDuration: 0.2) {
+            shadow.backgroundColor = UIColor(white: 0.0, alpha: 0.25)
+            travelClassPickerView.frame = targetFrame
+        }
+    }
+    
+    @objc func travelClassDoneTapped() {
+        self.travelClassPickerViewDismiss()
+    }
+    
+    func travelClassPickerViewDismiss() {
+        var shadow: UIView? = nil
+        var travelClassPickerView: TravelClassPickerView? = nil
+        
+        // looking for subviews with accessibility identifiers
+        for subview in self.view.subviews {
+            if subview.accessibilityIdentifier == "shadow" {
+                shadow = subview
+            }
+            if subview.accessibilityIdentifier == "travelClassPickerView" {
+                travelClassPickerView = subview as? TravelClassPickerView
+            }
+        }
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            shadow?.backgroundColor = UIColor(white: 0.0, alpha: 0.0)
+            travelClassPickerView?.frame = CGRect(x: 0,
+                                                 y: self.view.bounds.height,
+                                                 width: self.view.bounds.width,
+                                                 height: self.view.bounds.height)
+        }) { (finished) in
+            // Update model with new travel class
+            self.presenter.updateTravelClass(travelClass: travelClassPickerView?.getTravelClass() ?? TravelClass.Economy)
+            // Remove subviews
+            shadow?.removeFromSuperview()
+            travelClassPickerView?.removeFromSuperview()
         }
     }
 }

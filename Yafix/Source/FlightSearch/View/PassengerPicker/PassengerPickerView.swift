@@ -14,6 +14,22 @@ class PassengersPickerView: UIView {
     @IBOutlet weak var childrenLabel: UILabel!
     @IBOutlet weak var infantsLabel: UILabel!
     
+    class func instanceFromNib() -> PassengersPickerView {
+        return UINib(nibName: "PassengerPickerView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! PassengersPickerView
+    }
+    
+    func updateWith(passengers: Passengers) {
+        self.adults = NSNumber(value: passengers.adults)
+        self.children = NSNumber(value: passengers.children)
+        self.infants = NSNumber(value: passengers.infants)
+    }
+    
+    func getPassengers() -> Passengers {
+        return Passengers(adults: self.adults.uintValue,
+                          children: self.children.uintValue,
+                          infants: self.infants.uintValue)
+    }
+    
     var adults: NSNumber = 0 {
         didSet {
             self.adultsLabel.text = "\(adults)"
@@ -58,21 +74,5 @@ class PassengersPickerView: UIView {
         if self.infants.uintValue > 0 {
             self.infants = NSNumber(value: self.infants.uintValue - 1)
         }
-    }
-    
-    class func instanceFromNib() -> PassengersPickerView {
-        return UINib(nibName: "PassengerPickerView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! PassengersPickerView
-    }
-    
-    func updateWith(passengers: Passengers) {
-        self.adults = NSNumber(value: passengers.adults)
-        self.children = NSNumber(value: passengers.children)
-        self.infants = NSNumber(value: passengers.infants)
-    }
-    
-    func getPassengers() -> Passengers {
-        return Passengers(adults: self.adults.uintValue,
-                          children: self.children.uintValue,
-                          infants: self.infants.uintValue)
     }
 }
