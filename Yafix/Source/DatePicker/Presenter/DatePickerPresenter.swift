@@ -44,6 +44,8 @@ class DatePickerPresenter: NSObject, DatePickerPresenterProtocol {
         didSet {
             if currentType == .Return {
                 self.view.animateReturnButtonTapped()
+            } else {
+                self.view.animateDepartureButtonTapped()
             }
         }
     }
@@ -96,9 +98,11 @@ class DatePickerPresenter: NSObject, DatePickerPresenterProtocol {
     
     func handleViewDidLoad() {
         // Select departure and return date, if both not nil
-        if self.departureDate != nil && self.returnDate != nil {
+        if self.departureDate != nil {
             self.view.selectDate(date: departureDate!)
             self.view.updateDepartureLabel(dateRepresentation: departureDate?.representation() ?? Date().representation())
+        }
+        if self.returnDate != nil {
             self.view.selectDate(date: returnDate!)
             self.view.updateReturnLabel(dateRepresentation: returnDate?.representation() ?? "Optional")
         }

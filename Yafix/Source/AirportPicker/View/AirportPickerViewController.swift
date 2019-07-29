@@ -35,6 +35,11 @@ class AirportPickerViewController: UIViewController, AirportPickerViewProtocol {
         searchTextField.becomeFirstResponder()
     }
     
+    @IBAction func clearSearchTextField() {
+        searchTextField.text = ""
+        searchTextField.becomeFirstResponder()
+    }
+    
     @objc func searchTextFieldTextChanged(textField: UITextField) {
         self.presenter.set(searchString: textField.text ?? "")
     }

@@ -130,17 +130,17 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Eh8-kW-wJE">
-                            <rect key="frame" x="338" y="48" width="52" height="24"/>
+                            <rect key="frame" x="354" y="49" width="36" height="22"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QyY-Oz-h6X">
-                                    <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
                                     <state key="normal" image="icon-add.png"/>
                                     <connections>
                                         <action selector="incrementAdults" destination="MCf-R8-HTa" eventType="touchUpInside" id="3bG-ex-ygA"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xew-xM-85E">
-                                    <rect key="frame" x="28" y="0.0" width="24" height="24"/>
+                                    <rect key="frame" x="20" y="0.0" width="16" height="22"/>
                                     <state key="normal" image="icon-remove.png"/>
                                     <connections>
                                         <action selector="decrementAdults" destination="MCf-R8-HTa" eventType="touchUpInside" id="yog-Kv-Rxo"/>
@@ -149,17 +149,17 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="pr2-Q8-F3l">
-                            <rect key="frame" x="338" y="128" width="52" height="24"/>
+                            <rect key="frame" x="354" y="129" width="36" height="22"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQB-On-rNB">
-                                    <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
                                     <state key="normal" image="icon-add.png"/>
                                     <connections>
                                         <action selector="incrementChildren" destination="MCf-R8-HTa" eventType="touchUpInside" id="3tx-T7-WmC"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyi-38-NvW">
-                                    <rect key="frame" x="28" y="0.0" width="24" height="24"/>
+                                    <rect key="frame" x="20" y="0.0" width="16" height="22"/>
                                     <state key="normal" image="icon-remove.png"/>
                                     <connections>
                                         <action selector="decrementChildren" destination="MCf-R8-HTa" eventType="touchUpInside" id="103-xO-9O0"/>
@@ -168,17 +168,17 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Wkg-E7-yDA">
-                            <rect key="frame" x="338" y="203" width="52" height="24"/>
+                            <rect key="frame" x="354" y="204" width="36" height="22"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sy-f7-zS8">
-                                    <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
                                     <state key="normal" image="icon-add.png"/>
                                     <connections>
                                         <action selector="incrementInfants" destination="MCf-R8-HTa" eventType="touchUpInside" id="xZQ-S5-ApI"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Zl-vJ-0fQ">
-                                    <rect key="frame" x="28" y="0.0" width="24" height="24"/>
+                                    <rect key="frame" x="20" y="0.0" width="16" height="22"/>
                                     <state key="normal" image="icon-remove.png"/>
                                     <connections>
                                         <action selector="decrementInfants" destination="MCf-R8-HTa" eventType="touchUpInside" id="a7V-Et-AFu"/>
