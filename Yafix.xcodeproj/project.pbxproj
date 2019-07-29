@@ -37,6 +37,8 @@
 		175C808722EE4312004313C1 /* TravelClassPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175C808622EE4312004313C1 /* TravelClassPickerView.swift */; };
 		175C808A22EE4534004313C1 /* icon-accept@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175C808822EE4534004313C1 /* icon-accept@3x.png */; };
 		175C808B22EE4534004313C1 /* icon-accept@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175C808922EE4534004313C1 /* icon-accept@2x.png */; };
+		175C808E22EF3FDA004313C1 /* icon-location@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175C808C22EF3FD9004313C1 /* icon-location@3x.png */; };
+		175C808F22EF3FDA004313C1 /* icon-location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175C808D22EF3FDA004313C1 /* icon-location@2x.png */; };
 		1772479E2274281600888535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772479D2274281600888535 /* AppDelegate.swift */; };
 		177247A02274281600888535 /* FlightSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772479F2274281600888535 /* FlightSearchViewController.swift */; };
 		177247A62274281600888535 /* Yafix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 177247A42274281600888535 /* Yafix.xcdatamodeld */; };
@@ -108,6 +110,8 @@
 		175C808622EE4312004313C1 /* TravelClassPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelClassPickerView.swift; sourceTree = "<group>"; };
 		175C808822EE4534004313C1 /* icon-accept@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-accept@3x.png"; sourceTree = "<group>"; };
 		175C808922EE4534004313C1 /* icon-accept@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-accept@2x.png"; sourceTree = "<group>"; };
+		175C808C22EF3FD9004313C1 /* icon-location@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-location@3x.png"; sourceTree = "<group>"; };
+		175C808D22EF3FDA004313C1 /* icon-location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-location@2x.png"; sourceTree = "<group>"; };
 		1772479A2274281600888535 /* Yafix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yafix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1772479D2274281600888535 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1772479F2274281600888535 /* FlightSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 		170FC42A2295EF3800C3A751 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				175C808D22EF3FDA004313C1 /* icon-location@2x.png */,
+				175C808C22EF3FD9004313C1 /* icon-location@3x.png */,
 				175C808922EE4534004313C1 /* icon-accept@2x.png */,
 				175C808822EE4534004313C1 /* icon-accept@3x.png */,
 				175C807E22EE0BCD004313C1 /* icon-add@2x.png */,
@@ -629,6 +635,7 @@
 				179644272292948F00A41091 /* Overall.gif in Resources */,
 				177247AB2274281700888535 /* LaunchScreen.storyboard in Resources */,
 				171DFA94227C6D05006DD6DA /* AirportPickerCell.xib in Resources */,
+				175C808F22EF3FDA004313C1 /* icon-location@2x.png in Resources */,
 				175C808122EE0BCD004313C1 /* icon-remove@3x.png in Resources */,
 				17A0FDA32282C3E00041B802 /* SearchResultCell.xib in Resources */,
 				175C808B22EE4534004313C1 /* icon-accept@2x.png in Resources */,
@@ -642,6 +649,7 @@
 				175C807222EDCEB4004313C1 /* icon-swap@2x.png in Resources */,
 				175C807B22EDF6E4004313C1 /* PassengerPickerView.xib in Resources */,
 				1796442A2292948F00A41091 /* FlightSearch.png in Resources */,
+				175C808E22EF3FDA004313C1 /* icon-location@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

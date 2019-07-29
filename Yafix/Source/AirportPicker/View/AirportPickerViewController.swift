@@ -14,6 +14,7 @@ class AirportPickerViewController: UIViewController, AirportPickerViewProtocol {
     @IBOutlet var searchTextField: UITextField!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var closeButon: UIButton!
+    @IBOutlet var suggestionLabel: UILabel!
     
     required init(type: AirportType, selection: @escaping (JRSDKAirport) -> Void) {
         super.init(nibName: nil, bundle: nil)
@@ -31,6 +32,7 @@ class AirportPickerViewController: UIViewController, AirportPickerViewProtocol {
         self.closeButon.addTarget(self, action: #selector(AirportPickerViewController.dismissAnimated), for: .touchUpInside)
         self.searchTextField.delegate = self
         self.tableView.isHidden = true
+        searchTextField.becomeFirstResponder()
     }
     
     @objc func searchTextFieldTextChanged(textField: UITextField) {
@@ -47,13 +49,20 @@ class AirportPickerViewController: UIViewController, AirportPickerViewProtocol {
     
     func setTableViewHidden(hidden: Bool) {
         self.tableView.isHidden = hidden
+        self.suggestionLabel.isHidden = hidden
     }
 }
 
 
 private extension AirportPickerViewController {
     func setupTableView() {
-        tableView.register(UINib(nibName: AirportPickerCell.identifier, bundle: nil), forCellReuseIdentifier: AirportPickerCell.identifier)
+        let background = UIView(frame: CGRect(x: 0,
+                                              y: -480,
+                                              width: self.tableView.bounds.width,
+                                              height: self.tableView.bounds.height + 480 * 2))
+        background.backgroundColor = backgroundColor
+        self.tableView.backgroundView = background
+        self.tableView.register(UINib(nibName: AirportPickerCell.identifier, bundle: nil), forCellReuseIdentifier: AirportPickerCell.identifier)
     }
 }
 
@@ -79,10 +88,6 @@ extension AirportPickerViewController: UITableViewDataSource {
 extension AirportPickerViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.presenter.select(at: indexPath)
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Suggestions"
     }
 }
 

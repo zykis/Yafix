@@ -20,7 +20,7 @@ class AirportPickerCell: UITableViewCell, AirportPickerCellProtocol {
         super.awakeFromNib()
         self.IATALabel.layer.cornerRadius = 4.0
         self.IATALabel.layer.borderWidth = 1.0
-        self.IATALabel.layer.borderColor = UIColor.black.cgColor
+        self.IATALabel.layer.borderColor = inactiveColor.cgColor
     }
     
     func setup(viewModel: AirportPickerCellViewModel) {

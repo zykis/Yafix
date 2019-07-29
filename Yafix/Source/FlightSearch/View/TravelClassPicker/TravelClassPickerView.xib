@@ -22,7 +22,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Travel class" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RE-Cz-bhN">
                             <rect key="frame" x="24" y="17.5" width="105" height="25.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                            <color key="textColor" red="0.40784313729999999" green="0.42352941179999998" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.40784313729999999" green="0.42352941179999998" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUJ-hF-f6f">
@@ -33,7 +33,7 @@
                             </state>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.12941176469999999" green="0.1529411765" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.12941176470588234" green="0.15294117647058825" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="oUJ-hF-f6f" firstAttribute="centerY" secondItem="0RE-Cz-bhN" secondAttribute="centerY" id="Qv3-Wg-KoF"/>
                         <constraint firstAttribute="trailing" secondItem="oUJ-hF-f6f" secondAttribute="trailing" constant="24" id="RaR-u1-mLO"/>
@@ -118,7 +118,7 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" red="0.1176470588" green="0.13725490200000001" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.1176470588" green="0.13725490200000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="VEI-Oo-Lm0" firstAttribute="trailing" secondItem="o0N-T1-xBI" secondAttribute="trailing" id="0EF-qq-dO6"/>
                         <constraint firstItem="GlV-nY-YCC" firstAttribute="trailing" secondItem="o0N-T1-xBI" secondAttribute="trailing" id="0js-eB-Pba"/>
