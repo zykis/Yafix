@@ -34,7 +34,8 @@ struct FlightSearchViewModel {
                                   returnDate: nil)
         model.travelSegmentBuilder.originAirport = AviasalesSDK.sharedInstance().airportsStorage.findAnything(byIATA: "MOW")
         model.travelSegmentBuilder.destinationAirport = AviasalesSDK.sharedInstance().airportsStorage.findAnything(byIATA: "LON")
-        model.travelSegmentBuilder.departureDate = Date()
+        // FIXME: adding time interval from GMT. May be fixed with setting up Calendar locale?
+        model.travelSegmentBuilder.departureDate = Date().addingTimeInterval(TimeInterval(TimeZone.current.secondsFromGMT()))
         model.searchInfoBuilder.adults = 1
         model.searchInfoBuilder.travelClass = .economy
         self.update()

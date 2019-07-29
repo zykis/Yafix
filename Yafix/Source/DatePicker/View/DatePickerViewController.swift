@@ -35,6 +35,9 @@ class DatePickerViewController: UIViewController  {
     
     func setupDatePickerView() {
         self.datePickerView.scrollDirection = .vertical
+        // Sets timezone of FSCalendar to UTC (https://github.com/WenchaoD/FSCalendar/issues/159#issuecomment-351740204)
+        self.datePickerView.setValue(TimeZone(identifier: "UTC"), forKey: "timeZone")
+        self.datePickerView.perform(Selector(("invalidateDateTools")))
     }
 }
 

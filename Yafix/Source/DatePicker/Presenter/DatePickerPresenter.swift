@@ -119,6 +119,7 @@ class DatePickerPresenter: NSObject, DatePickerPresenterProtocol {
 // FSCalendarDelegate
 extension DatePickerPresenter: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        print("selected date: \(date)")
         switch currentType {
         case .Departure:
             self.departureDate = date
