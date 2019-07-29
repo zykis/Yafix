@@ -103,7 +103,11 @@ extension FlightSearchViewController {
         let loadingView = LoadingViewController(searchInfo: searchInfo)
         self.navigationController?.pushViewController(loadingView, animated: true)
     }
-    
+}
+
+
+// MARK: DatePicker
+extension FlightSearchViewController {
     @objc func departureDateTapped() {
         self.presenter.handleDepartureDateTapped()
     }

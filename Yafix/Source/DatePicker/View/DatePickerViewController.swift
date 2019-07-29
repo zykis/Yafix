@@ -89,6 +89,14 @@ extension DatePickerViewController: DatePickerViewProtocol {
     func updateReturnLabel(dateRepresentation: String) {
         self.returnLabel.text = dateRepresentation
     }
+    
+    func selectDate(date: Date) {
+        self.datePickerView.select(date)
+    }
+    
+    func deselectDate(date: Date) {
+        self.datePickerView.deselect(date)
+    }
 }
 
 
@@ -105,5 +113,7 @@ extension DatePickerViewController {
         
         self.datePickerView.delegate = self.presenter
         self.datePickerView.dataSource = self.presenter
+        
+        self.presenter.handleViewDidLoad()
     }
 }

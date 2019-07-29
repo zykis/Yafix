@@ -24,6 +24,8 @@ protocol DatePickerViewProtocol {
     func animateReturnButtonTapped()
     func updateDepartureLabel(dateRepresentation: String)
     func updateReturnLabel(dateRepresentation: String)
+    func selectDate(date: Date)
+    func deselectDate(date: Date)
 }
 
 
@@ -32,18 +34,35 @@ protocol DatePickerPresenterProtocol {
     func handleDoneTapped()
     func handleDepartureButtonTapped()
     func handleReturnButtonTapped()
+    func handleViewDidLoad()
 }
 
 
 class DatePickerPresenter: NSObject, DatePickerPresenterProtocol {
     var view: DatePickerViewProtocol!
-    var currentType: DateType = .Departure
+    var currentType: DateType = .Departure {
+        didSet {
+            if currentType == .Return {
+                self.view.animateReturnButtonTapped()
+            }
+        }
+    }
     var departureDate: Date? {
+        willSet {
+            if let departureDate = departureDate {
+                self.view.deselectDate(date: departureDate)
+            }
+        }
         didSet {
             self.view.updateDepartureLabel(dateRepresentation: departureDate?.representation() ?? Date().representation())
         }
     }
     var returnDate: Date? {
+        willSet {
+            if let returnDate = self.returnDate {
+                self.view.deselectDate(date: returnDate)
+            }
+        }
         didSet {
             self.view.updateReturnLabel(dateRepresentation: returnDate?.representation() ?? "Optional")
         }
@@ -74,6 +93,22 @@ class DatePickerPresenter: NSObject, DatePickerPresenterProtocol {
     func handleReturnButtonTapped() {
         self.currentType = .Return
     }
+    
+    func handleViewDidLoad() {
+        // Select departure and return date, if both not nil
+        if self.departureDate != nil && self.returnDate != nil {
+            self.view.selectDate(date: departureDate!)
+            self.view.updateDepartureLabel(dateRepresentation: departureDate?.representation() ?? Date().representation())
+            self.view.selectDate(date: returnDate!)
+            self.view.updateReturnLabel(dateRepresentation: returnDate?.representation() ?? "Optional")
+        }
+        
+        if self.currentType == .Return {
+            self.view.animateReturnButtonTapped()
+        } else {
+            self.view.animateDepartureButtonTapped()
+        }
+    }
 }
 
 
@@ -84,7 +119,6 @@ extension DatePickerPresenter: FSCalendarDelegate {
         case .Departure:
             self.departureDate = date
             self.currentType = .Return
-            self.view.animateReturnButtonTapped()
             break
         case .Return:
             self.returnDate = date
