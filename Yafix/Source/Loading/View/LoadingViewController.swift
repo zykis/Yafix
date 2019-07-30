@@ -42,4 +42,8 @@ class LoadingViewController: UIViewController, LoadingView {
         let destVC = SearchResultsViewController(searchResult: searchResult)
         self.navigationController?.pushViewController(destVC, animated: true)
     }
+    
+    func jumpToRoot() {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 }

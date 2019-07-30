@@ -12,6 +12,7 @@ import AviasalesSDK
 protocol LoadingView: class {
     init(searchInfo: JRSDKSearchInfo)
     func presentSearchResult(searchResult: JRSDKSearchResult)
+    func jumpToRoot()
 }
 
 
@@ -46,6 +47,7 @@ extension LoadingPresenter: JRSDKSearchPerformerDelegate {
     
     func searchPerformer(_ searchPerformer: JRSDKSearchPerformer!, didFailSearchWithError error: Error!) {
         print("error, searching tickets: ", error.localizedDescription)
+        self.view.jumpToRoot()
     }
     
     func searchPerformer(_ searchPerformer: JRSDKSearchPerformer!, didFinalizeSearchWith searchInfo: JRSDKSearchInfo!, error: Error!) {

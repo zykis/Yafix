@@ -47,6 +47,7 @@
 		175C809B22F087D8004313C1 /* icon-settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175C809922F087D8004313C1 /* icon-settings@3x.png */; };
 		175C809E22F08F92004313C1 /* icon-american-airline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175C809C22F08F91004313C1 /* icon-american-airline@2x.png */; };
 		175C809F22F08F92004313C1 /* icon-american-airline@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175C809D22F08F92004313C1 /* icon-american-airline@3x.png */; };
+		175C80A122F0DA60004313C1 /* UIImageView + download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175C80A022F0DA60004313C1 /* UIImageView + download.swift */; };
 		1772479E2274281600888535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772479D2274281600888535 /* AppDelegate.swift */; };
 		177247A02274281600888535 /* FlightSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772479F2274281600888535 /* FlightSearchViewController.swift */; };
 		177247A62274281600888535 /* Yafix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 177247A42274281600888535 /* Yafix.xcdatamodeld */; };
@@ -128,6 +129,7 @@
 		175C809922F087D8004313C1 /* icon-settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-settings@3x.png"; sourceTree = "<group>"; };
 		175C809C22F08F91004313C1 /* icon-american-airline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-american-airline@2x.png"; sourceTree = "<group>"; };
 		175C809D22F08F92004313C1 /* icon-american-airline@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-american-airline@3x.png"; sourceTree = "<group>"; };
+		175C80A022F0DA60004313C1 /* UIImageView + download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + download.swift"; sourceTree = "<group>"; };
 		1772479A2274281600888535 /* Yafix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yafix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1772479D2274281600888535 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1772479F2274281600888535 /* FlightSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				17385FB9227FE79600D04A1A /* UIViewController+dismiss.swift */,
 				170B316F22A03CCE00C1832B /* UIBarButtonItem.SystemItem + image.swift */,
 				175C807422EDE455004313C1 /* Date+String.swift */,
+				175C80A022F0DA60004313C1 /* UIImageView + download.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -764,6 +767,7 @@
 				1723C44A2276248E002608DF /* FlightSearchViewModel.swift in Sources */,
 				1781052C227B451400F510FF /* AirportPickerViewController.swift in Sources */,
 				177247A62274281600888535 /* Yafix.xcdatamodeld in Sources */,
+				175C80A122F0DA60004313C1 /* UIImageView + download.swift in Sources */,
 				171DFA9D227F7D01006DD6DA /* JRSDKAirportBuilder+Sample.swift in Sources */,
 				171DFA98227DD3B4006DD6DA /* AiroirtPickerCellViewModel.swift in Sources */,
 				17A9D8112274944D00E8BA3F /* LoadingViewController.swift in Sources */,

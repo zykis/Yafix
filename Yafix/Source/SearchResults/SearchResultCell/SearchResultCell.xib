@@ -116,6 +116,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="airlineIcon" destination="1p7-OF-eIZ" id="BIU-Tq-rfq"/>
                 <outlet property="airlineLabel" destination="WOt-2O-TD8" id="2iV-Ds-71M"/>
                 <outlet property="arrivalTimeLabel" destination="2mZ-jX-8xY" id="nVN-3D-YWK"/>
                 <outlet property="departureTimeLabel" destination="bVN-Ks-Ota" id="qye-ej-lHb"/>
