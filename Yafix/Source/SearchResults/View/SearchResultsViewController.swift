@@ -26,26 +26,17 @@ class SearchResultsViewController: UIViewController, SearchResultsViewProtocol {
         self.presenter.handleTicketTapped(at: index)
     }
     
-    @objc func jumpToRoot() {
-        print("GROOOOT")
+    @IBAction func jumpToRoot() {
         self.navigationController?.popToRootViewController(animated: true)
     }
 }
+
 
 // MARK: Lifecycle
 extension SearchResultsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTableView()
-        
-        self.navigationItem.hidesBackButton = true
-        let backButton = UIBarButtonItem(image: UIImage(named: "back-button.png"), style: .plain, target: self, action: #selector(jumpToRoot))
-//        backButton.setBackgroundImage(UIImage(named: "back-button.png"), for: .normal, barMetrics: .default)
-        self.navigationItem.leftBarButtonItem = backButton
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }
 
@@ -53,6 +44,13 @@ extension SearchResultsViewController {
 // MARK: Private Initialization
 extension SearchResultsViewController {
     private func setupTableView() {
+        let background = UIView(frame: CGRect(x: 0,
+                                              y: -480,
+                                              width: self.tableView.bounds.width,
+                                              height: self.tableView.bounds.height + 480 * 2))
+        background.backgroundColor = backgroundColor
+        self.tableView.backgroundView = background
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.register(UINib(nibName: SearchResultCell.identifier, bundle: nil), forCellReuseIdentifier: SearchResultCell.identifier)
@@ -63,15 +61,15 @@ extension SearchResultsViewController {
 // MARK: UITableViewDataSource
 extension SearchResultsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.presenter.numberOfSections()
+        return self.presenter.numberOfRowsInSection(section: 0)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.presenter.numberOfRowsInSection(section: section)
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let ticketViewModel = self.presenter.ticketViewModel(at: indexPath.row)
+        let ticketViewModel = self.presenter.ticketViewModel(at: indexPath.section)
         let cell = self.tableView.dequeueReusableCell(withIdentifier: SearchResultCell.identifier) as! SearchResultCell
         cell.setup(viewModel: ticketViewModel)
         return cell
@@ -86,6 +84,16 @@ extension SearchResultsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.ticketTapped(at: indexPath.row)
+        self.ticketTapped(at: indexPath.section)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 24.0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = UIView(frame: .zero)
+        header.backgroundColor = backgroundColor
+        return header
     }
 }

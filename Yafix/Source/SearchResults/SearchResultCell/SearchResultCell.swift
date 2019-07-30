@@ -24,7 +24,7 @@ class SearchResultCell: UITableViewCell {
     func setup(viewModel: TicketViewModel) {
         self.priceLabel.text = viewModel.price
         self.airlineLabel.text = viewModel.airline
-        self.airlineIcon.image = UIImage(named: viewModel.airlineIcon)
+//        self.airlineIcon.image = UIImage(named: viewModel.airlineIcon)
         self.departureTimeLabel.text = viewModel.departureTime
         self.originIATALabel.text = viewModel.originIATA
         self.arrivalTimeLabel.text = viewModel.arrivalTime

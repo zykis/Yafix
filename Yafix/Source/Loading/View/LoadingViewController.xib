@@ -23,9 +23,10 @@
             <subviews>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8Bh-3a-fOl">
                     <rect key="frame" x="197" y="443" width="20" height="20"/>
+                    <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </activityIndicatorView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.1176470588" green="0.13725490200000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="8Bh-3a-fOl" firstAttribute="centerX" secondItem="NYW-mu-9Ks" secondAttribute="centerX" id="LFT-fO-Ios"/>
                 <constraint firstItem="8Bh-3a-fOl" firstAttribute="centerY" secondItem="NYW-mu-9Ks" secondAttribute="centerY" id="ru6-08-22b"/>
