@@ -51,6 +51,8 @@ class PassengersPickerView: UIView {
     }
     
     @IBAction func decrementAdults() {
+        // At least 1 adult should be presented
+        if self.adults.uintValue == 1 { return }
         if self.adults.uintValue > 0 {
             self.adults = NSNumber(value: self.adults.uintValue - 1)
         }

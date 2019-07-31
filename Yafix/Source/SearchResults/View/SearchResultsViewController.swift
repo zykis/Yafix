@@ -11,6 +11,11 @@ import AviasalesSDK
 
 class SearchResultsViewController: UIViewController, SearchResultsViewProtocol {
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var originDestinationLabel: UILabel!
+    @IBOutlet var travelDateLabel: UILabel!
+    @IBOutlet var passengerCountLabel: UILabel!
+    @IBOutlet var travelClassLabel: UILabel!
+    
     var presenter: SearchResultsPresenterProtocol!
     
     required init(searchResult: JRSDKSearchResult) {
@@ -29,6 +34,13 @@ class SearchResultsViewController: UIViewController, SearchResultsViewProtocol {
     @IBAction func jumpToRoot() {
         self.navigationController?.popToRootViewController(animated: true)
     }
+    
+    func updateWithViewModel(viewModel: SearchResultsViewModel) {
+        self.originDestinationLabel.text = viewModel.originDestinationAirportsText
+        self.travelDateLabel.text = viewModel.travelDateText
+        self.passengerCountLabel.text = viewModel.passengersCountText
+        self.travelClassLabel.text = viewModel.travelClassText
+    }
 }
 
 
@@ -37,6 +49,7 @@ extension SearchResultsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTableView()
+        self.presenter.handleViewDidLoad()
     }
 }
 

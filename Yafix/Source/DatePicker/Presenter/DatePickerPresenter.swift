@@ -137,7 +137,21 @@ extension DatePickerPresenter: FSCalendarDelegate {
         var calendar = Calendar.current
         calendar.timeZone = TimeZone(secondsFromGMT: 0)!
         
-        return (date >= calendar.startOfDay(for: Date()))
+        if date < calendar.startOfDay(for: Date()) {
+            return false
+        }
+        
+        // Prevent from selecting return date earlier then departure
+        if let departureDate = self.departureDate, self.currentType == .Return && date < departureDate {
+            return false
+        }
+        
+        // Prevent from selecting departure date later, then return date
+        if let returnDate = self.returnDate, self.currentType == .Departure && date > returnDate {
+            return false
+        }
+        
+        return true
     }
 }
 

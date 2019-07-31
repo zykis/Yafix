@@ -31,7 +31,7 @@ struct TicketViewModel {
         self.airline = model.mainAirline.name
         self.airlineIcon = ""
         
-        self.price = "₽\(proposal.price.priceInRUB())"
+        self.price = "₽ " + TicketViewModel.priceWithDots(price: proposal.price.priceInRUB())
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
@@ -49,6 +49,13 @@ struct TicketViewModel {
         self.flightDuration = "\(hours)h \(minutes)m"
     }
     
+    private static func priceWithDots(price: NSNumber) -> String {
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = "."
+        formatter.numberStyle = .decimal
+        return formatter.string(from: NSNumber(integerLiteral: price.intValue))!
+    }
+    
     var modelProposal: JRSDKProposal {
         return self.model.proposals.firstObject as! JRSDKProposal
     }
@@ -60,7 +67,13 @@ struct TicketViewModel {
 
 struct SearchResultsViewModel {
     var model: JRSDKSearchResult
+    
     var bestPrice: String?
+    var originDestinationAirportsText: String?
+    var travelDateText: String?
+    var passengersCountText: String?
+    var travelClassText: String?
+    
     var tickets: [TicketViewModel] = []
     
     init(searchResult: JRSDKSearchResult) {
@@ -70,6 +83,35 @@ struct SearchResultsViewModel {
     
     mutating func update() {
         self.bestPrice = "\(self.model.bestPrice?.currency ?? "$") \(self.model.bestPrice?.value ?? 0.0))"
+        
+        // Setting up TravelDateText
+        let firstTravelSegment = self.model.searchResultInfo.searchInfo.travelSegments.firstObject as? JRSDKTravelSegment
+        if let ts = firstTravelSegment {
+            self.travelDateText = ts.departureDate.representation()
+        }
+        let lastTravelSegment = self.model.searchResultInfo.searchInfo.travelSegments.lastObject as? JRSDKTravelSegment
+        if let ts = lastTravelSegment, self.model.searchResultInfo.searchInfo.travelSegments.count > 1
+            && ts.destinationAirport == firstTravelSegment?.originAirport {
+            // That's the return segment
+            if let travelDateText = self.travelDateText {
+                self.travelDateText = travelDateText + " - " + ts.departureDate.representation()
+            }
+        }
+        
+        // Setting up Origin - Destination airports text
+        if let ts = firstTravelSegment {
+            self.originDestinationAirportsText = "\(ts.originAirport.iata) - \(ts.destinationAirport.iata)"
+        }
+        
+        // Setting up passengers text
+        let si = self.model.searchResultInfo.searchInfo
+        self.passengersCountText = "\(si.adults + si.children + si.infants) passenger(s)"
+        
+        // Travel class
+        self.travelClassText = travelClassRepresentation(travelClass: self.model.searchResultInfo.searchInfo.travelClass)
+        
+        //
+        
         self.tickets = []
         for el in self.model.tickets {
             if let ticketModel = el as? JRSDKTicket {

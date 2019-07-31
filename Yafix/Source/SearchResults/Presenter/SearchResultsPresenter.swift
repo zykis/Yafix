@@ -12,6 +12,7 @@ import AviasalesSDK
 protocol SearchResultsViewProtocol: class {
     init(searchResult: JRSDKSearchResult)
     func ticketTapped(at index: Int)
+    func updateWithViewModel(viewModel: SearchResultsViewModel)
 }
 
 
@@ -21,6 +22,7 @@ protocol SearchResultsPresenterProtocol {
     func numberOfRowsInSection(section: Int) -> Int
     func ticketViewModel(at index: Int) -> TicketViewModel
     func handleTicketTapped(at index: Int)
+    func handleViewDidLoad()
 }
 
 
@@ -56,6 +58,10 @@ class SearchResultsPresenter: NSObject, SearchResultsPresenterProtocol {
         let searchID = ticketViewModel.modelSearchID
         self.purchasePerformer = AviasalesSDKPurchasePerformer(proposal: proposal, searchId: searchID)
         self.purchasePerformer?.perform(with: self)
+    }
+    
+    func handleViewDidLoad() {
+        self.view.updateWithViewModel(viewModel: self.viewModel)
     }
 }
 

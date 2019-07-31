@@ -25,9 +25,6 @@ struct FlightSearchViewModel {
     
     var returnDate: String = ""
     
-    private let dateFormatter = DateFormatter()
-    private let dateFormat = "MMM dd, EEE"
-    
     init() {
         model = FlightSearchModel(travelSegmentBuilder: JRSDKTravelSegmentBuilder(),
                                   searchInfoBuilder: JRSDKSearchInfoBuilder(),
@@ -42,9 +39,7 @@ struct FlightSearchViewModel {
     }
     
     mutating func update() {
-        dateFormatter.dateFormat = self.dateFormat
-        
-        departureDate = dateFormatter.string(from: model.travelSegmentBuilder.departureDate ?? Date())
+        departureDate = model.travelSegmentBuilder.departureDate!.representation()
         originAirportIATA = model.travelSegmentBuilder.originAirport?.iata ?? ""
         originAirportDescription = "\(model.travelSegmentBuilder.originAirport?.city?.appending(", ") ?? "")\(model.travelSegmentBuilder.originAirport?.countryName ?? "")"
         
@@ -68,23 +63,10 @@ struct FlightSearchViewModel {
             passengers += "\(model.searchInfoBuilder.infants) infants"
         }
         
-        var travelClassString: String
-        switch model.searchInfoBuilder.travelClass {
-        case .economy:
-            travelClassString = "Economy"
-        case .premiumEconomy:
-            travelClassString = "Premium economy"
-        case .business:
-            travelClassString = "Business"
-        case .first:
-            travelClassString = "First class"
-        @unknown default:
-            fatalError()
-        }
-        travelClass = travelClassString
+        travelClass = travelClassRepresentation(travelClass: model.searchInfoBuilder.travelClass)
         
         if let date = model.returnDate {
-            returnDate = dateFormatter.string(from: date)
+            returnDate = date.representation()
         } else {
             returnDate = "Optional"
         }
