@@ -38,6 +38,7 @@ class DatePickerViewController: UIViewController  {
         // Sets timezone of FSCalendar to UTC (https://github.com/WenchaoD/FSCalendar/issues/159#issuecomment-351740204)
         self.datePickerView.setValue(TimeZone(identifier: "UTC"), forKey: "timeZone")
         self.datePickerView.perform(Selector(("invalidateDateTools")))
+        self.datePickerView.locale = Locale.current
     }
 }
 

@@ -31,7 +31,7 @@ class AirportPickerViewController: UIViewController, AirportPickerViewProtocol {
         self.searchTextField.addTarget(self, action: #selector(AirportPickerViewController.searchTextFieldTextChanged(textField:)), for: .editingChanged)
         self.closeButon.addTarget(self, action: #selector(AirportPickerViewController.dismissAnimated), for: .touchUpInside)
         self.searchTextField.delegate = self
-        self.tableView.isHidden = true
+        setTableViewHidden(hidden: true)
         searchTextField.becomeFirstResponder()
     }
     

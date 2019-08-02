@@ -47,28 +47,30 @@ struct FlightSearchViewModel {
         destinationAirportDescription = "\(model.travelSegmentBuilder.destinationAirport?.city?.appending(", ") ?? "")\(model.travelSegmentBuilder.destinationAirport?.countryName ?? "")"
         
         passengers = ""
-        if model.searchInfoBuilder.adults != 0 {
-            passengers += "\(model.searchInfoBuilder.adults) adults"
-        }
-        if model.searchInfoBuilder.children != 0 {
-            if !passengers.isEmpty {
-                passengers += ", "
-            }
-            passengers += "\(model.searchInfoBuilder.children) children"
-        }
-        if model.searchInfoBuilder.infants != 0 {
-            if !passengers.isEmpty {
-                passengers += ", "
-            }
-            passengers += "\(model.searchInfoBuilder.infants) infants"
-        }
+        // TODO: Plural localized string
+//        if model.searchInfoBuilder.adults != 0 {
+//            passengers += "\(model.searchInfoBuilder.adults) " + NSLocalizedString("adults", comment: "")
+//        }
+//        if model.searchInfoBuilder.children != 0 {
+//            if !passengers.isEmpty {
+//                passengers += ", "
+//            }
+//            passengers += "\(model.searchInfoBuilder.children) " + NSLocalizedString("children", comment: "")
+//        }
+//        if model.searchInfoBuilder.infants != 0 {
+//            if !passengers.isEmpty {
+//                passengers += ", "
+//            }
+//            passengers += "\(model.searchInfoBuilder.infants) " + NSLocalizedString("infants", comment: "")
+//        }
+        passengers = String(model.searchInfoBuilder.adults + model.searchInfoBuilder.children + model.searchInfoBuilder.infants)
         
         travelClass = travelClassRepresentation(travelClass: model.searchInfoBuilder.travelClass)
         
         if let date = model.returnDate {
             returnDate = date.representation()
         } else {
-            returnDate = "Optional"
+            returnDate = NSLocalizedString("optional", comment: "")
         }
     }
 }

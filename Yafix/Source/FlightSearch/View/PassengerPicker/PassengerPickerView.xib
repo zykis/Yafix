@@ -24,6 +24,9 @@
                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                             <color key="textColor" red="0.40784313729999999" green="0.42352941179999998" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="passengers"/>
+                            </userDefinedRuntimeAttributes>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZR-AI-6Ce">
                             <rect key="frame" x="341" y="11" width="49" height="38"/>
@@ -31,6 +34,9 @@
                             <state key="normal" title="Done">
                                 <color key="titleColor" red="0.14901960780000001" green="0.73333333329999995" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="done"/>
+                            </userDefinedRuntimeAttributes>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.12941176469999999" green="0.1529411765" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,24 +63,30 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="uPq-of-KZU">
                                     <rect key="frame" x="32.5" y="0.0" width="140" height="56"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adult" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qg9-gb-FVB">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adults" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qg9-gb-FVB">
                                             <rect key="frame" x="0.0" y="0.0" width="140" height="31.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="adults"/>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 years and more" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McQ-Pk-eoV">
                                             <rect key="frame" x="0.0" y="35.5" width="140" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.40784313729999999" green="0.42352941179999998" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="adults_description"/>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                     </subviews>
                                 </stackView>
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="DBh-Tj-Nga">
-                            <rect key="frame" x="24" y="112" width="161" height="56"/>
+                            <rect key="frame" x="24" y="112" width="189.5" height="56"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmr-b9-cZq">
                                     <rect key="frame" x="0.0" y="0.0" width="12" height="56"/>
@@ -83,26 +95,32 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="gAJ-QF-4TB">
-                                    <rect key="frame" x="28" y="0.0" width="133" height="56"/>
+                                    <rect key="frame" x="28" y="0.0" width="161.5" height="56"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Children" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gL-aq-cuQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="133" height="31.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="161.5" height="31.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="children"/>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 years and more" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffH-je-1Rq">
-                                            <rect key="frame" x="0.0" y="35.5" width="133" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="from 2 years up to 12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffH-je-1Rq">
+                                            <rect key="frame" x="0.0" y="35.5" width="161.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.40784313729999999" green="0.42352941179999998" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="children_description"/>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                     </subviews>
                                 </stackView>
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="E77-DG-bbn">
-                            <rect key="frame" x="24" y="187" width="162" height="56"/>
+                            <rect key="frame" x="24" y="187" width="161.5" height="56"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hB5-Ji-d5e">
                                     <rect key="frame" x="0.0" y="0.0" width="16.5" height="56"/>
@@ -111,36 +129,42 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Da5-Ci-e7B">
-                                    <rect key="frame" x="32.5" y="0.0" width="129.5" height="56"/>
+                                    <rect key="frame" x="32.5" y="0.0" width="129" height="56"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Infants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFy-HY-Veh">
-                                            <rect key="frame" x="0.0" y="0.0" width="129.5" height="31.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="129" height="31.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="infants"/>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="less then 6 years" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7k-fo-Z5i">
-                                            <rect key="frame" x="0.0" y="35.5" width="129.5" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="less then 2 years" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7k-fo-Z5i">
+                                            <rect key="frame" x="0.0" y="35.5" width="129" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.40784313729999999" green="0.42352941179999998" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="infants_description"/>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                     </subviews>
                                 </stackView>
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Eh8-kW-wJE">
-                            <rect key="frame" x="354" y="49" width="36" height="22"/>
+                            <rect key="frame" x="338" y="48" width="52" height="24"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QyY-Oz-h6X">
-                                    <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                     <state key="normal" image="icon-add.png"/>
                                     <connections>
                                         <action selector="incrementAdults" destination="MCf-R8-HTa" eventType="touchUpInside" id="3bG-ex-ygA"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xew-xM-85E">
-                                    <rect key="frame" x="20" y="0.0" width="16" height="22"/>
+                                    <rect key="frame" x="28" y="0.0" width="24" height="24"/>
                                     <state key="normal" image="icon-remove.png"/>
                                     <connections>
                                         <action selector="decrementAdults" destination="MCf-R8-HTa" eventType="touchUpInside" id="yog-Kv-Rxo"/>
@@ -149,17 +173,17 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="pr2-Q8-F3l">
-                            <rect key="frame" x="354" y="129" width="36" height="22"/>
+                            <rect key="frame" x="338" y="128" width="52" height="24"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQB-On-rNB">
-                                    <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                     <state key="normal" image="icon-add.png"/>
                                     <connections>
                                         <action selector="incrementChildren" destination="MCf-R8-HTa" eventType="touchUpInside" id="3tx-T7-WmC"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyi-38-NvW">
-                                    <rect key="frame" x="20" y="0.0" width="16" height="22"/>
+                                    <rect key="frame" x="28" y="0.0" width="24" height="24"/>
                                     <state key="normal" image="icon-remove.png"/>
                                     <connections>
                                         <action selector="decrementChildren" destination="MCf-R8-HTa" eventType="touchUpInside" id="103-xO-9O0"/>
@@ -168,17 +192,17 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Wkg-E7-yDA">
-                            <rect key="frame" x="354" y="204" width="36" height="22"/>
+                            <rect key="frame" x="338" y="203" width="52" height="24"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sy-f7-zS8">
-                                    <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                     <state key="normal" image="icon-add.png"/>
                                     <connections>
                                         <action selector="incrementInfants" destination="MCf-R8-HTa" eventType="touchUpInside" id="xZQ-S5-ApI"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Zl-vJ-0fQ">
-                                    <rect key="frame" x="20" y="0.0" width="16" height="22"/>
+                                    <rect key="frame" x="28" y="0.0" width="24" height="24"/>
                                     <state key="normal" image="icon-remove.png"/>
                                     <connections>
                                         <action selector="decrementInfants" destination="MCf-R8-HTa" eventType="touchUpInside" id="a7V-Et-AFu"/>

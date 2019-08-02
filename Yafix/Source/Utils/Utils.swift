@@ -12,13 +12,13 @@ import AviasalesSDK
 func travelClassRepresentation(travelClass: JRSDKTravelClass) -> String {
     switch travelClass {
     case .economy:
-        return "Economy"
+        return NSLocalizedString("economy", comment: "")
     case .premiumEconomy:
-        return "Premium economy"
+        return NSLocalizedString("premium_economy", comment: "")
     case .business:
-        return "Business"
+        return NSLocalizedString("business", comment: "")
     case .first:
-        return "First class"
+        return NSLocalizedString("first_class", comment: "")
     @unknown default:
         fatalError("Unknown travel class")
     }

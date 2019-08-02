@@ -13,6 +13,7 @@ extension Date {
         let dateFormatter = DateFormatter()
         let dateFormat = "MMM dd, EEE"
         dateFormatter.dateFormat = dateFormat
-        return dateFormatter.string(from: self)
+        dateFormatter.locale = Locale.current
+        return dateFormatter.string(from: self).capitalized
     }
 }

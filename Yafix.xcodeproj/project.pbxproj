@@ -24,6 +24,9 @@
 		1723C44A2276248E002608DF /* FlightSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1723C4492276248E002608DF /* FlightSearchViewModel.swift */; };
 		17385FBA227FE79600D04A1A /* UIViewController+dismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17385FB9227FE79600D04A1A /* UIViewController+dismiss.swift */; };
 		17385FBE2280B13100D04A1A /* FlightSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17385FBD2280B13100D04A1A /* FlightSearchModel.swift */; };
+		174303BE22F4975D0073F484 /* JRSDKPrice+UserCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174303BD22F4975D0073F484 /* JRSDKPrice+UserCurrency.swift */; };
+		174303C422F4B9BF0073F484 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 174303C622F4B9BF0073F484 /* Localizable.strings */; };
+		174303CB22F4C19A0073F484 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174303CA22F4C19A0073F484 /* Localizable.swift */; };
 		175C807222EDCEB4004313C1 /* icon-swap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175C807022EDCEB4004313C1 /* icon-swap@2x.png */; };
 		175C807322EDCEB4004313C1 /* icon-swap@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175C807122EDCEB4004313C1 /* icon-swap@3x.png */; };
 		175C807522EDE455004313C1 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175C807422EDE455004313C1 /* Date+String.swift */; };
@@ -49,6 +52,7 @@
 		175C809F22F08F92004313C1 /* icon-american-airline@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175C809D22F08F92004313C1 /* icon-american-airline@3x.png */; };
 		175C80A122F0DA60004313C1 /* UIImageView + download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175C80A022F0DA60004313C1 /* UIImageView + download.swift */; };
 		175C80A322F1ECC1004313C1 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175C80A222F1ECC1004313C1 /* Utils.swift */; };
+		175C80A922F208CB004313C1 /* FSCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175C80A822F208CB004313C1 /* FSCalendar.framework */; };
 		1772479E2274281600888535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772479D2274281600888535 /* AppDelegate.swift */; };
 		177247A02274281600888535 /* FlightSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772479F2274281600888535 /* FlightSearchViewController.swift */; };
 		177247A62274281600888535 /* Yafix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 177247A42274281600888535 /* Yafix.xcdatamodeld */; };
@@ -107,6 +111,11 @@
 		1723C4492276248E002608DF /* FlightSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchViewModel.swift; sourceTree = "<group>"; };
 		17385FB9227FE79600D04A1A /* UIViewController+dismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+dismiss.swift"; sourceTree = "<group>"; };
 		17385FBD2280B13100D04A1A /* FlightSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchModel.swift; sourceTree = "<group>"; };
+		174303BD22F4975D0073F484 /* JRSDKPrice+UserCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JRSDKPrice+UserCurrency.swift"; sourceTree = "<group>"; };
+		174303C122F4B8CA0073F484 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		174303C522F4B9BF0073F484 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		174303CA22F4C19A0073F484 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		174303CC22F4C5680073F484 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		175C807022EDCEB4004313C1 /* icon-swap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-swap@2x.png"; sourceTree = "<group>"; };
 		175C807122EDCEB4004313C1 /* icon-swap@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-swap@3x.png"; sourceTree = "<group>"; };
 		175C807422EDE455004313C1 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
@@ -132,6 +141,9 @@
 		175C809D22F08F92004313C1 /* icon-american-airline@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-american-airline@3x.png"; sourceTree = "<group>"; };
 		175C80A022F0DA60004313C1 /* UIImageView + download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + download.swift"; sourceTree = "<group>"; };
 		175C80A222F1ECC1004313C1 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		175C80A622F208C4004313C1 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		175C80A822F208CB004313C1 /* FSCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FSCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		175C80AA22F208DF004313C1 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1772479A2274281600888535 /* Yafix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yafix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1772479D2274281600888535 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1772479F2274281600888535 /* FlightSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +185,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				175C80A922F208CB004313C1 /* FSCalendar.framework in Frameworks */,
 				CB2C8A37E853FED15C249CF0 /* Pods_Yafix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +287,7 @@
 				170B316F22A03CCE00C1832B /* UIBarButtonItem.SystemItem + image.swift */,
 				175C807422EDE455004313C1 /* Date+String.swift */,
 				175C80A022F0DA60004313C1 /* UIImageView + download.swift */,
+				174303CA22F4C19A0073F484 /* Localizable.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -359,6 +373,14 @@
 			children = (
 			);
 			path = IATALabel;
+			sourceTree = "<group>";
+		};
+		174303BC22F497440073F484 /* JRSDK */ = {
+			isa = PBXGroup;
+			children = (
+				174303BD22F4975D0073F484 /* JRSDKPrice+UserCurrency.swift */,
+			);
+			path = JRSDK;
 			sourceTree = "<group>";
 		};
 		175C807622EDF6A3004313C1 /* PassengerPicker */ = {
@@ -464,6 +486,7 @@
 		179643D022927D3800A41091 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				174303BC22F497440073F484 /* JRSDK */,
 				170FC4272295394500C3A751 /* DatePicker */,
 				17A0FD8B2282B2790041B802 /* SearchResults */,
 				17810525227B428900F510FF /* AirportPicker */,
@@ -484,6 +507,7 @@
 				177247AC2274281700888535 /* Info.plist */,
 				177247A72274281700888535 /* Assets.xcassets */,
 				17B9F37922ED29300033401E /* Colors.swift */,
+				174303C622F4B9BF0073F484 /* Localizable.strings */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -568,6 +592,9 @@
 		6947329AA0F8426454D5A9C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				175C80AA22F208DF004313C1 /* RxSwift.framework */,
+				175C80A822F208CB004313C1 /* FSCalendar.framework */,
+				175C80A622F208C4004313C1 /* Alamofire.framework */,
 				70D7BA4F8C1C61A327DEFD40 /* Pods_Yafix.framework */,
 			);
 			name = Frameworks;
@@ -640,6 +667,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 177247912274281600888535;
 			productRefGroup = 1772479B2274281600888535 /* Products */;
@@ -662,6 +690,7 @@
 				175C807322EDCEB4004313C1 /* icon-swap@3x.png in Resources */,
 				175C808A22EE4534004313C1 /* icon-accept@3x.png in Resources */,
 				175C809322F085C9004313C1 /* icon-arrow-right@3x.png in Resources */,
+				174303C422F4B9BF0073F484 /* Localizable.strings in Resources */,
 				179644292292948F00A41091 /* DatePicker.png in Resources */,
 				175C808322EE0BCD004313C1 /* icon-remove@2x.png in Resources */,
 				170FC42F2295F07500C3A751 /* back-button@3x.png in Resources */,
@@ -776,9 +805,11 @@
 				177247A02274281600888535 /* FlightSearchViewController.swift in Sources */,
 				17B9F37A22ED29300033401E /* Colors.swift in Sources */,
 				1723C44A2276248E002608DF /* FlightSearchViewModel.swift in Sources */,
+				174303BE22F4975D0073F484 /* JRSDKPrice+UserCurrency.swift in Sources */,
 				1781052C227B451400F510FF /* AirportPickerViewController.swift in Sources */,
 				177247A62274281600888535 /* Yafix.xcdatamodeld in Sources */,
 				175C80A122F0DA60004313C1 /* UIImageView + download.swift in Sources */,
+				174303CB22F4C19A0073F484 /* Localizable.swift in Sources */,
 				171DFA9D227F7D01006DD6DA /* JRSDKAirportBuilder+Sample.swift in Sources */,
 				175C80A322F1ECC1004313C1 /* Utils.swift in Sources */,
 				171DFA98227DD3B4006DD6DA /* AiroirtPickerCellViewModel.swift in Sources */,
@@ -823,10 +854,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		174303C622F4B9BF0073F484 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				174303C522F4B9BF0073F484 /* ru */,
+				174303CC22F4C5680073F484 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		177247A92274281700888535 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				177247AA2274281700888535 /* Base */,
+				174303C122F4B8CA0073F484 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -838,6 +879,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -899,6 +941,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -957,6 +1000,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67U7CVYQJQ;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Yafix/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -977,6 +1021,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67U7CVYQJQ;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Yafix/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1042,7 +1087,7 @@
 				177247B92274281700888535 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		177247BA2274281700888535 /* Build configuration list for PBXNativeTarget "Yafix" */ = {
 			isa = XCConfigurationList;
@@ -1051,7 +1096,7 @@
 				177247BC2274281700888535 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		177247BD2274281700888535 /* Build configuration list for PBXNativeTarget "YafixTests" */ = {
 			isa = XCConfigurationList;
@@ -1060,7 +1105,7 @@
 				177247BF2274281700888535 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 

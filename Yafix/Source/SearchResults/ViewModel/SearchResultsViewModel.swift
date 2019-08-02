@@ -31,10 +31,12 @@ struct TicketViewModel {
         self.airline = model.mainAirline.name
         self.airlineIcon = ""
         
-        self.price = "₽ " + TicketViewModel.priceWithDots(price: proposal.price.priceInRUB())
+//        self.price = "₽ " + TicketViewModel.priceWithDots(price: proposal.price.priceInRUB())
+        self.price = proposal.price.formattedPriceinUserCurrency()
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.locale = Locale.current
         let departureDate = Date(timeIntervalSince1970: directFlightSegment.departureDateTimestamp.doubleValue)
         let arrivalDate = Date(timeIntervalSince1970: directFlightSegment.arrivalDateTimestamp.doubleValue)
         
@@ -46,7 +48,7 @@ struct TicketViewModel {
         
         let hours = Int(directFlightSegment.totalDurationInMinutes / 60)
         let minutes = directFlightSegment.totalDurationInMinutes % 60
-        self.flightDuration = "\(hours)h \(minutes)m"
+        self.flightDuration = "\(hours)\(NSLocalizedString("hours_abbreviation", comment: "")) \(minutes)\(NSLocalizedString("minutes_abbreviation", comment: ""))"
     }
     
     private static func priceWithDots(price: NSNumber) -> String {
@@ -82,7 +84,8 @@ struct SearchResultsViewModel {
     }
     
     mutating func update() {
-        self.bestPrice = "\(self.model.bestPrice?.currency ?? "$") \(self.model.bestPrice?.value ?? 0.0))"
+//        self.bestPrice = "\(self.model.bestPrice?.currency ?? "$") \(self.model.bestPrice?.value ?? 0.0))"
+        self.bestPrice = self.model.bestPrice?.formattedPriceinUserCurrency()
         
         // Setting up TravelDateText
         let firstTravelSegment = self.model.searchResultInfo.searchInfo.travelSegments.firstObject as? JRSDKTravelSegment
@@ -105,7 +108,8 @@ struct SearchResultsViewModel {
         
         // Setting up passengers text
         let si = self.model.searchResultInfo.searchInfo
-        self.passengersCountText = "\(si.adults + si.children + si.infants) passenger(s)"
+        // TODO: plural localization
+        self.passengersCountText = "\(si.adults + si.children + si.infants) \(NSLocalizedString("passenger(s)", comment: ""))"
         
         // Travel class
         self.travelClassText = travelClassRepresentation(travelClass: self.model.searchResultInfo.searchInfo.travelClass)

@@ -66,7 +66,7 @@ class DatePickerPresenter: NSObject, DatePickerPresenterProtocol {
             }
         }
         didSet {
-            self.view.updateReturnLabel(dateRepresentation: returnDate?.representation() ?? "Optional")
+            self.view.updateReturnLabel(dateRepresentation: returnDate?.representation() ?? NSLocalizedString("optional", comment: ""))
         }
     }
     let selection: (Date, DateType) -> Void
