@@ -383,6 +383,13 @@
 			path = JRSDK;
 			sourceTree = "<group>";
 		};
+		174303DB22F4E5990073F484 /* DetailedSearchResult */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailedSearchResult;
+			sourceTree = "<group>";
+		};
 		175C807622EDF6A3004313C1 /* PassengerPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,6 +496,7 @@
 				174303BC22F497440073F484 /* JRSDK */,
 				170FC4272295394500C3A751 /* DatePicker */,
 				17A0FD8B2282B2790041B802 /* SearchResults */,
+				174303DB22F4E5990073F484 /* DetailedSearchResult */,
 				17810525227B428900F510FF /* AirportPicker */,
 				17A9D80D227493C800E8BA3F /* Loading */,
 				170AC6F122742C5A0067BD77 /* FlightSearch */,

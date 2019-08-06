@@ -9,6 +9,9 @@
 import Foundation
 import AviasalesSDK
 
+let udOriginAirportIATAKey: String = "originAirportIATA"
+let udDestinationAirportIATAKey: String = "destinationAirportIATA"
+
 protocol AirportPickerViewProtocol: class {
     init(type: AirportType, selection: @escaping (JRSDKAirport) -> Void)
     func reloadData()
@@ -69,8 +72,13 @@ class AirportPickerPresenter: NSObject, AirportPickerPresenterProtocol {
     
     func select(at indexPath: IndexPath) {
         let vm = self.viewModel[indexPath.row]
+        self.saveAirportToUserDefaults(airportIATA: vm.iata, with: self.type)
         self.selection(vm.model)
         self.view.dismiss()
+    }
+    
+    private func saveAirportToUserDefaults(airportIATA: String, with type: AirportType) {
+        UserDefaults.standard.set(airportIATA, forKey: type == AirportType.origin ? udOriginAirportIATAKey : udDestinationAirportIATAKey)
     }
 }
 

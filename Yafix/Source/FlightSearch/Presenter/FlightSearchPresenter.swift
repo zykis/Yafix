@@ -43,7 +43,7 @@ protocol FlightSearchViewPresenter {
     func handleSearch()
     func handleAirportSelected(type: AirportType, airport: JRSDKAirport)
     func handleSwapAirports()
-    func handleLoad()
+    func handleViewDidLoad()
     func handleDepartureDateTapped()
     func handleReturnDateTapped()
     func handleDateSelected(date: Date, type: DateType)
@@ -76,8 +76,9 @@ class FlightSearchPresenter: NSObject, FlightSearchViewPresenter {
         return searchInfoBuilder.build()
     }
     
-    func handleLoad() {
+    func handleViewDidLoad() {
         self.view.updateWithViewModel(viewModel: self.viewModel)
+        self.loadUserDefaults()
     }
     
     func handleSearch() {
@@ -180,5 +181,19 @@ class FlightSearchPresenter: NSObject, FlightSearchViewPresenter {
         
         self.viewModel.update()
         self.view.updateWithViewModel(viewModel: self.viewModel)
+    }
+    
+    private func loadUserDefaults() {
+        if let originAirportIATA = UserDefaults.standard.value(forKey: udOriginAirportIATAKey) as? String {
+            if let airport = AviasalesSDK.sharedInstance().airportsStorage.findAnything(byIATA: originAirportIATA) {
+                self.handleAirportSelected(type: .origin, airport: airport)
+            }
+        }
+        
+        if let destinationAirportIATA = UserDefaults.standard.value(forKey: udDestinationAirportIATAKey) as? String {
+            if let airport = AviasalesSDK.sharedInstance().airportsStorage.findAnything(byIATA: destinationAirportIATA) {
+                self.handleAirportSelected(type: .destination, airport: airport)
+            }
+        }
     }
 }

@@ -59,7 +59,7 @@ extension FlightSearchViewController {
         self.travelClassStackView.isUserInteractionEnabled = true
         self.travelClassStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(travelClassTapped)))
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        self.presenter.handleLoad()
+        self.presenter.handleViewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
